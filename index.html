@@ -3,140 +3,233 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Shinan — Gen Z Web Portfolio</title>
+    <title> MOhamed Shinan — Gen Z Web Portfolio</title>
     <meta
       name="description"
-      content="Gen Z portfolio for Shinan: product, design, and code with bold aesthetics and real-world focus."
+      content="MOhamed Shinan: product, design, and code with bold aesthetics and real-world focus."
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: "#f7f4ef",
+              ink: "#101012",
+              muted: "#5b5c63",
+              accent: "#b7ff3a",
+              accent2: "#3ae3ff",
+              accent3: "#ff7a59",
+              card: "#ffffff",
+              glass: "rgba(255, 255, 255, 0.7)",
+              stroke: "rgba(16, 16, 18, 0.12)",
+            },
+            boxShadow: {
+              soft: "0 28px 70px rgba(16, 16, 18, 0.12)",
+              button: "0 12px 30px rgba(16, 16, 18, 0.18)",
+            },
+            fontFamily: {
+              sans: ["Manrope", "system-ui", "sans-serif"],
+              display: ["Space Grotesk", "system-ui", "sans-serif"],
+            },
+            keyframes: {
+              reveal: {
+                to: { opacity: "1", transform: "translateY(0)" },
+              },
+            },
+            animation: {
+              reveal: "reveal 0.8s ease forwards",
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="bg-base font-sans leading-relaxed text-ink overflow-x-hidden">
     <div class="ambient">
       <div class="ambient__blob ambient__blob--a"></div>
       <div class="ambient__blob ambient__blob--b"></div>
       <div class="ambient__grid"></div>
     </div>
 
-    <header class="topbar">
-      <div class="container topbar__inner">
-        <div class="brand">
-          <span class="brand__dot"></span>
-          <span class="brand__name">Shinan</span>
+    <header class="sticky top-0 z-10 border-b border-black/10 bg-base/90 backdrop-blur-xl">
+      <div
+        class="mx-auto flex w-[min(1120px,90vw)] items-center justify-between gap-6 py-[18px]"
+      >
+        <div class="inline-flex items-center gap-2.5 font-display font-bold tracking-[0.04em]">
+          <span class="h-3 w-3 rounded-full bg-accent3"></span>
+          <span>Mohamed Shinan</span>
         </div>
-        <nav class="topbar__nav" aria-label="Primary">
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
-          <a href="#stack">Stack</a>
-          <a href="#contact">Contact</a>
+        <nav class="hidden items-center gap-5 font-medium text-muted md:flex" aria-label="Primary">
+          <a class="transition-colors duration-200 hover:text-ink" href="#work">Work</a>
+          <a class="transition-colors duration-200 hover:text-ink" href="#about">About</a>
+          <a class="transition-colors duration-200 hover:text-ink" href="#stack">Stack</a>
+          <a class="transition-colors duration-200 hover:text-ink" href="#contact">Contact</a>
         </nav>
-        <a class="btn btn--ghost" href="#contact">Let’s build</a>
+        <a
+          class="inline-flex items-center justify-center rounded-full border border-stroke px-5 py-2.5 font-semibold text-ink transition-colors duration-200 hover:bg-ink/5"
+          href="#contact"
+        >
+          Let’s build
+        </a>
       </div>
     </header>
 
     <main>
-      <section class="section hero" data-component="Hero">
-        <div class="container hero__grid">
-          <div class="hero__copy">
-            <div class="pill">Available for collabs</div>
-            <h1 class="hero__title">
+      <section class="relative z-10 pb-24 pt-[120px]" data-component="Hero">
+        <div class="mx-auto grid w-[min(1120px,90vw)] items-center gap-12 lg:grid-cols-2">
+          <div class="grid gap-6">
+            <div
+              class="inline-flex w-fit items-center rounded-full bg-accent px-3.5 py-1.5 text-sm font-semibold"
+            >
+              Available for collabs
+            </div>
+            <h1
+              class="font-display text-[clamp(2.6rem,5vw,4.6rem)] leading-[1.05] tracking-[-0.03em]"
+            >
               I build bold, fast websites that feel like a cultural moment.
             </h1>
-            <p class="hero__subtitle">
+            <p class="max-w-xl text-[1.05rem] text-muted">
               I’m Shinan — a web maker blending product thinking, playful motion,
               and clean engineering. Cool, but not chaotic. Simple, but never
               boring.
             </p>
-            <div class="hero__actions">
-              <a class="btn" href="#work">See featured work</a>
-              <a class="btn btn--text" href="#contact">Start a project</a>
+            <div class="flex flex-wrap gap-4">
+              <a
+                class="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 font-semibold text-white shadow-button transition-transform duration-200 hover:-translate-y-0.5"
+                href="#work"
+              >
+                See featured work
+              </a>
+              <a
+                class="inline-flex items-center justify-center gap-2 rounded-full px-0 py-3 font-semibold text-ink"
+                href="#contact"
+              >
+                Start a project
+              </a>
             </div>
-            <div class="hero__chips">
-              <span class="chip">Brand sites</span>
-              <span class="chip">Product landing</span>
-              <span class="chip">Web apps</span>
-              <span class="chip">Motion UI</span>
+            <div class="flex flex-wrap gap-2.5">
+              <span class="rounded-full border border-black/10 bg-white/50 px-3.5 py-2 text-sm">
+                Brand sites
+              </span>
+              <span class="rounded-full border border-black/10 bg-white/50 px-3.5 py-2 text-sm">
+                Product landing
+              </span>
+              <span class="rounded-full border border-black/10 bg-white/50 px-3.5 py-2 text-sm">
+                Web apps
+              </span>
+              <span class="rounded-full border border-black/10 bg-white/50 px-3.5 py-2 text-sm">
+                Motion UI
+              </span>
             </div>
           </div>
-          <div class="hero__card">
-            <div class="hero__card-header">
+          <div
+            class="grid gap-5 rounded-[28px] bg-[linear-gradient(135deg,#ffffff,rgba(58,227,255,0.15))] p-7 shadow-soft"
+          >
+            <div class="flex items-center justify-between text-[0.85rem] uppercase tracking-[0.16em] text-muted">
               <span>Now Playing</span>
-              <span class="hero__live">Live build</span>
+              <span class="font-semibold text-ink">Live build</span>
             </div>
-            <div class="hero__card-body">
-              <p class="hero__card-title">Portfolio 03 / Neon Daylight</p>
-              <p class="hero__card-desc">
+            <div class="grid gap-3">
+              <p class="font-display text-[1.4rem]">Portfolio 03 / Neon Daylight</p>
+              <p class="text-muted">
                 Lightweight site system with modular sections, dramatic type, and
                 instant load.
               </p>
-              <div class="hero__stats">
+              <div class="grid gap-4 sm:grid-cols-3">
                 <div>
-                  <p class="stat__value">98</p>
-                  <p class="stat__label">Lighthouse</p>
+                  <p class="font-display text-[1.6rem] font-semibold">98</p>
+                  <p class="text-xs text-muted">Lighthouse</p>
                 </div>
                 <div>
-                  <p class="stat__value">4</p>
-                  <p class="stat__label">Week sprint</p>
+                  <p class="font-display text-[1.6rem] font-semibold">4</p>
+                  <p class="text-xs text-muted">Week sprint</p>
                 </div>
                 <div>
-                  <p class="stat__value">12</p>
-                  <p class="stat__label">Sections</p>
+                  <p class="font-display text-[1.6rem] font-semibold">12</p>
+                  <p class="text-xs text-muted">Sections</p>
                 </div>
               </div>
             </div>
-            <div class="hero__card-footer">
+            <div class="flex flex-wrap items-center gap-3 text-[0.85rem] text-muted">
               <span>React + Astro + GSAP</span>
-              <span class="dot"></span>
+              <span class="h-1.5 w-1.5 rounded-full bg-accent3"></span>
               <span>2026</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="work" data-component="Work">
-        <div class="container">
-          <div class="section__head">
+      <section class="relative z-10 py-24" id="work" data-component="Work">
+        <div class="mx-auto w-[min(1120px,90vw)]">
+          <div class="mb-12 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p class="section__eyebrow">Featured work</p>
-              <h2 class="section__title">Projects that set the vibe</h2>
+              <p class="mb-2 text-[13px] font-semibold uppercase tracking-[0.2em] text-muted">
+                Featured work
+              </p>
+              <h2 class="font-display text-[clamp(2rem,3vw,3rem)] leading-[1.1] tracking-[-0.02em]">
+                Projects that set the vibe
+              </h2>
             </div>
-            <a class="btn btn--ghost" href="#contact">Request deck</a>
+            <a
+              class="inline-flex items-center justify-center rounded-full border border-stroke px-5 py-2.5 font-semibold text-ink transition-colors duration-200 hover:bg-ink/5"
+              href="#contact"
+            >
+              Request deck
+            </a>
           </div>
 
-          <div class="grid grid--cards">
-            <article class="card reveal" style="--delay: 0s">
-              <div class="card__tag">Launch</div>
-              <h3 class="card__title">Cloud Nine Studio</h3>
-              <p class="card__copy">
+          <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <article
+              class="grid min-h-[240px] gap-4 overflow-hidden rounded-[18px] border border-black/10 bg-card p-6 opacity-0 translate-y-4 animate-reveal [animation-delay:var(--delay,0s)]"
+              style="--delay: 0s"
+            >
+              <div class="text-xs uppercase tracking-[0.2em] text-muted">Launch</div>
+              <h3 class="font-display text-[1.3rem]">Cloud Nine Studio</h3>
+              <p class="text-muted">
                 A lifestyle brand refresh with scroll-triggered stories and
                 commerce-ready blocks.
               </p>
-              <div class="card__meta">
+              <div class="flex items-center justify-between text-sm text-muted">
                 <span>Brand + Web</span>
                 <span>2025</span>
               </div>
             </article>
 
-            <article class="card reveal" style="--delay: 0.1s">
-              <div class="card__tag">Product</div>
-              <h3 class="card__title">Pulse Creator Hub</h3>
-              <p class="card__copy">
+            <article
+              class="grid min-h-[240px] gap-4 overflow-hidden rounded-[18px] border border-black/10 bg-card p-6 opacity-0 translate-y-4 animate-reveal [animation-delay:var(--delay,0s)]"
+              style="--delay: 0.1s"
+            >
+              <div class="text-xs uppercase tracking-[0.2em] text-muted">Product</div>
+              <h3 class="font-display text-[1.3rem]">Pulse Creator Hub</h3>
+              <p class="text-muted">
                 A creator management platform with dashboards, analytics, and a
                 modular design system.
               </p>
-              <div class="card__meta">
+              <div class="flex items-center justify-between text-sm text-muted">
                 <span>Web App</span>
                 <span>2026</span>
               </div>
             </article>
 
-            <article class="card reveal" style="--delay: 0.2s">
-              <div class="card__tag">Campaign</div>
-              <h3 class="card__title">Futura Sound Fest</h3>
-              <p class="card__copy">
+            <article
+              class="grid min-h-[240px] gap-4 overflow-hidden rounded-[18px] border border-black/10 bg-card p-6 opacity-0 translate-y-4 animate-reveal [animation-delay:var(--delay,0s)]"
+              style="--delay: 0.2s"
+            >
+              <div class="text-xs uppercase tracking-[0.2em] text-muted">Campaign</div>
+              <h3 class="font-display text-[1.3rem]">Futura Sound Fest</h3>
+              <p class="text-muted">
                 Ticketing microsite with immersive gradients, 3D typography, and
                 fluid ticket flows.
               </p>
-              <div class="card__meta">
+              <div class="flex items-center justify-between text-sm text-muted">
                 <span>Experiential</span>
                 <span>2025</span>
               </div>
@@ -145,63 +238,65 @@
         </div>
       </section>
 
-      <section class="section" id="about" data-component="About">
-        <div class="container about">
-          <div class="about__copy">
-            <p class="section__eyebrow">About</p>
-            <h2 class="section__title">Simple systems, loud outcomes.</h2>
-            <p class="section__copy">
+      <section class="relative z-10 py-24" id="about" data-component="About">
+        <div class="mx-auto grid w-[min(1120px,90vw)] items-start gap-10 lg:grid-cols-2">
+          <div>
+            <p class="mb-2 text-[13px] font-semibold uppercase tracking-[0.2em] text-muted">About</p>
+            <h2 class="font-display text-[clamp(2rem,3vw,3rem)] leading-[1.1] tracking-[-0.02em]">
+              Simple systems, loud outcomes.
+            </h2>
+            <p class="mt-3 max-w-xl text-muted">
               I design and build component-first experiences that scale. Think
               adaptive grids, smart motion, and content that feels alive. If
               you’ve got a brand with energy, I’ll help it show up.
             </p>
-            <div class="about__list">
-              <div class="about__item">
-                <span class="about__icon">01</span>
+            <div class="mt-8 grid gap-5">
+              <div class="grid grid-cols-[auto,1fr] gap-4">
+                <span class="font-display text-base font-semibold text-accent3">01</span>
                 <div>
-                  <h3>Component libraries</h3>
-                  <p>
+                  <h3 class="font-semibold">Component libraries</h3>
+                  <p class="text-muted">
                     Reusable sections that stay flexible across campaigns,
                     product, and content.
                   </p>
                 </div>
               </div>
-              <div class="about__item">
-                <span class="about__icon">02</span>
+              <div class="grid grid-cols-[auto,1fr] gap-4">
+                <span class="font-display text-base font-semibold text-accent3">02</span>
                 <div>
-                  <h3>Speed + polish</h3>
-                  <p>
+                  <h3 class="font-semibold">Speed + polish</h3>
+                  <p class="text-muted">
                     Fast builds with cinematic motion, without slowing the stack.
                   </p>
                 </div>
               </div>
-              <div class="about__item">
-                <span class="about__icon">03</span>
+              <div class="grid grid-cols-[auto,1fr] gap-4">
+                <span class="font-display text-base font-semibold text-accent3">03</span>
                 <div>
-                  <h3>Story-first</h3>
-                  <p>
+                  <h3 class="font-semibold">Story-first</h3>
+                  <p class="text-muted">
                     Each page is a narrative arc: hook, depth, conversion, repeat.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="about__panel">
-            <div class="panel">
-              <p class="panel__eyebrow">Currently</p>
-              <h3 class="panel__title">Building for youth-led brands.</h3>
-              <p class="panel__copy">
+          <div class="grid gap-5">
+            <div class="rounded-[18px] border border-black/10 bg-glass p-6 backdrop-blur-xl">
+              <p class="text-xs uppercase tracking-[0.2em] text-muted">Currently</p>
+              <h3 class="my-3 font-display text-[1.4rem]">Building for youth-led brands.</h3>
+              <p class="text-muted">
                 Focused on fashion, music, and creator economy startups.
               </p>
-              <div class="panel__chips">
-                <span>Remote</span>
-                <span>GMT+5</span>
-                <span>Freelance</span>
+              <div class="mt-4 flex flex-wrap gap-2.5">
+                <span class="rounded-full bg-black/5 px-3 py-1.5 text-xs">Remote</span>
+                <span class="rounded-full bg-black/5 px-3 py-1.5 text-xs">GMT+5</span>
+                <span class="rounded-full bg-black/5 px-3 py-1.5 text-xs">Freelance</span>
               </div>
             </div>
-            <div class="panel panel--alt">
-              <p class="panel__eyebrow">Services</p>
-              <ul class="panel__list">
+            <div class="rounded-[18px] border border-black/10 bg-[#fff9f2] p-6">
+              <p class="text-xs uppercase tracking-[0.2em] text-muted">Services</p>
+              <ul class="mt-4 grid list-none gap-3">
                 <li>Design systems</li>
                 <li>Landing pages</li>
                 <li>Motion prototyping</li>
@@ -212,90 +307,109 @@
         </div>
       </section>
 
-      <section class="section" id="stack" data-component="Stack">
-        <div class="container">
-          <div class="section__head">
+      <section class="relative z-10 py-24" id="stack" data-component="Stack">
+        <div class="mx-auto w-[min(1120px,90vw)]">
+          <div class="mb-12 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p class="section__eyebrow">Stack</p>
-              <h2 class="section__title">The toolkit</h2>
+              <p class="mb-2 text-[13px] font-semibold uppercase tracking-[0.2em] text-muted">Stack</p>
+              <h2 class="font-display text-[clamp(2rem,3vw,3rem)] leading-[1.1] tracking-[-0.02em]">
+                The toolkit
+              </h2>
             </div>
-            <p class="section__copy">
+            <p class="mt-3 max-w-xl text-muted">
               A modular stack focused on speed, responsiveness, and playful
               motion.
             </p>
           </div>
 
-          <div class="grid grid--stack">
-            <div class="stack-card">
-              <h3>Design</h3>
-              <p>Figma, Framer, Tokens, Motion</p>
+          <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="grid gap-2 rounded-[18px] border border-black/10 bg-white p-5">
+              <h3 class="font-display text-lg">Design</h3>
+              <p class="text-muted">Figma, Framer, Tokens, Motion</p>
             </div>
-            <div class="stack-card">
-              <h3>Frontend</h3>
-              <p>React, Astro, Next.js, Webflow</p>
+            <div class="grid gap-2 rounded-[18px] border border-black/10 bg-white p-5">
+              <h3 class="font-display text-lg">Frontend</h3>
+              <p class="text-muted">React, Astro, Next.js, Webflow</p>
             </div>
-            <div class="stack-card">
-              <h3>UX</h3>
-              <p>Story mapping, Prototyping, User testing</p>
+            <div class="grid gap-2 rounded-[18px] border border-black/10 bg-white p-5">
+              <h3 class="font-display text-lg">UX</h3>
+              <p class="text-muted">Story mapping, Prototyping, User testing</p>
             </div>
-            <div class="stack-card">
-              <h3>Build</h3>
-              <p>Vite, GSAP, Tailwind (only when needed)</p>
+            <div class="grid gap-2 rounded-[18px] border border-black/10 bg-white p-5">
+              <h3 class="font-display text-lg">Build</h3>
+              <p class="text-muted">Vite, GSAP, Tailwind (only when needed)</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="contact" data-component="Contact">
-        <div class="container contact">
-          <div class="contact__copy">
-            <p class="section__eyebrow">Contact</p>
-            <h2 class="section__title">Let’s build something that hits.</h2>
-            <p class="section__copy">
+      <section class="relative z-10 py-24" id="contact" data-component="Contact">
+        <div class="mx-auto grid w-[min(1120px,90vw)] items-start gap-10 lg:grid-cols-2">
+          <div>
+            <p class="mb-2 text-[13px] font-semibold uppercase tracking-[0.2em] text-muted">Contact</p>
+            <h2 class="font-display text-[clamp(2rem,3vw,3rem)] leading-[1.1] tracking-[-0.02em]">
+              Let’s build something that hits.
+            </h2>
+            <p class="mt-3 max-w-xl text-muted">
               Drop a short brief, timeline, and budget. I’ll reply within 48
               hours.
             </p>
-            <div class="contact__links">
-              <a href="mailto:hello@shinan.studio">hello@shinan.studio</a>
-              <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+            <div class="mt-5 grid gap-3 font-medium text-ink">
+              <a class="hover:opacity-70" href="mailto:hello@shinan.studio">hello@shinan.studio</a>
+              <a class="hover:opacity-70" href="https://www.instagram.com" target="_blank" rel="noreferrer">
                 Instagram
               </a>
-              <a href="https://www.behance.net" target="_blank" rel="noreferrer">
+              <a class="hover:opacity-70" href="https://www.behance.net" target="_blank" rel="noreferrer">
                 Behance
               </a>
             </div>
           </div>
-          <form class="contact__form">
-            <div class="field">
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Your name" />
-            </div>
-            <div class="field">
-              <label for="email">Email</label>
+          <form class="grid gap-4 rounded-[28px] border border-black/10 bg-card p-6">
+            <div class="grid gap-2">
+              <label class="text-xs uppercase tracking-[0.18em] text-muted" for="name">Name</label>
               <input
+                class="rounded-[12px] border border-black/10 bg-white/90 px-3.5 py-3"
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+              />
+            </div>
+            <div class="grid gap-2">
+              <label class="text-xs uppercase tracking-[0.18em] text-muted" for="email">Email</label>
+              <input
+                class="rounded-[12px] border border-black/10 bg-white/90 px-3.5 py-3"
                 id="email"
                 name="email"
                 type="email"
                 placeholder="name@email.com"
               />
             </div>
-            <div class="field">
-              <label for="project">Project details</label>
+            <div class="grid gap-2">
+              <label class="text-xs uppercase tracking-[0.18em] text-muted" for="project">
+                Project details
+              </label>
               <textarea
+                class="rounded-[12px] border border-black/10 bg-white/90 px-3.5 py-3"
                 id="project"
                 name="project"
                 rows="4"
                 placeholder="Tell me about the project"
               ></textarea>
             </div>
-            <button class="btn" type="submit">Send brief</button>
+            <button
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 font-semibold text-white shadow-button transition-transform duration-200 hover:-translate-y-0.5"
+              type="submit"
+            >
+              Send brief
+            </button>
           </form>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container footer__inner">
+    <footer class="relative z-10 py-10 pb-[60px] text-muted">
+      <div class="mx-auto flex w-[min(1120px,90vw)] flex-wrap items-center justify-between gap-3">
         <p>Shinan © 2026</p>
         <p>Built with clarity + taste.</p>
       </div>
