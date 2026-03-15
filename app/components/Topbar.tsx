@@ -15,7 +15,7 @@ export default function Topbar() {
           {/* <Link className="transition-colors duration-200 hover:text-ink" href="/about">
             About
           </Link> */}
-          <Link className="transition-colors duration-200 hover:text-ink" href="/work">
+          <Link className="transition-colors duration-200 hover:text-ink" href="/experience">
             Experience
           </Link>
         

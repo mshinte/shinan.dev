@@ -138,11 +138,6 @@ export default function AvatarMascot() {
         <circle cx="102" cy="202" r="10" fill="#ffffff" stroke="#101012" strokeWidth="4" />
         <path d="M90 124h60" stroke="#101012" strokeWidth="4" strokeLinecap="round" />
       </motion.svg>
-      <div className="mt-6 flex items-center gap-3 text-[0.85rem] uppercase tracking-[0.16em] text-muted">
-        <span>Graffiti Dev</span>
-        <span className="h-1.5 w-1.5 rounded-full bg-accent3" />
-        <span>Available</span>
-      </div>
     </motion.div>
   );
 }
