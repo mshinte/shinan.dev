@@ -11,15 +11,15 @@ export default function SectionWork() {
               Featured work
             </p>
             <h2 className="font-display text-[clamp(2rem,3vw,3rem)] leading-[1.1] tracking-[-0.02em]">
-              Projects that set the vibe
+              Projects I have worked on.
             </h2>
           </div>
-          <Link
+          {/* <Link
             className="inline-flex items-center justify-center rounded-full border border-stroke px-5 py-2.5 font-semibold text-ink transition-colors duration-200 hover:bg-ink/5"
             href="/contact"
           >
             Request deck
-          </Link>
+          </Link> */}
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">

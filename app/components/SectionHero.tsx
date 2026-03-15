@@ -13,11 +13,11 @@ export default function SectionHero() {
             I build websites that feel like a cultural moment.
           </h1>
           <p className="max-w-xl text-[1.05rem] text-muted">
-            I’m Shinan — a web maker blending product thinking, playful motion,
+            I’m Shinan - a web maker blending product thinking, playful motion,
             and clean engineering. Cool, but not chaotic. Simple, but never
             boring.
           </p>
-          <div className="flex flex-wrap gap-4">
+          {/* <div className="flex flex-wrap gap-4">
             <Link
               className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 font-semibold text-white shadow-button transition-transform duration-200 hover:-translate-y-0.5"
               href="/work"
@@ -30,8 +30,8 @@ export default function SectionHero() {
             >
               Start a project
             </Link>
-          </div>
-          <div className="flex flex-wrap gap-2.5">
+          </div> */}
+          {/* <div className="flex flex-wrap gap-2.5">
             <span className="rounded-full border border-black/10 bg-white/50 px-3.5 py-2 text-sm">
               Brand sites
             </span>
@@ -44,7 +44,7 @@ export default function SectionHero() {
             <span className="rounded-full border border-black/10 bg-white/50 px-3.5 py-2 text-sm">
               Motion UI
             </span>
-          </div>
+          </div> */}
         </div>
         <div className="relative flex items-center justify-center">
           <AvatarMascot />

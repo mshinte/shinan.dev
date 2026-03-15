@@ -12,12 +12,13 @@ export default function Topbar() {
           <span> Mohamed Shinan</span>
         </Link>
         <nav className="hidden items-center gap-5 font-medium text-muted md:flex" aria-label="Primary">
-          <Link className="transition-colors duration-200 hover:text-ink" href="/work">
-            Work
-          </Link>
-          <Link className="transition-colors duration-200 hover:text-ink" href="/about">
+          {/* <Link className="transition-colors duration-200 hover:text-ink" href="/about">
             About
+          </Link> */}
+          <Link className="transition-colors duration-200 hover:text-ink" href="/work">
+            Experience
           </Link>
+        
           {/* <Link className="transition-colors duration-200 hover:text-ink" href="/stack">
             Stack
           </Link> */}
@@ -25,12 +26,7 @@ export default function Topbar() {
             Contact
           </Link>
         </nav>
-        <Link
-          className="inline-flex items-center justify-center rounded-full border border-stroke px-5 py-2.5 font-semibold text-ink transition-colors duration-200 hover:bg-ink/5"
-          href="/contact"
-        >
-          Let’s build
-        </Link>
+        
       </div>
     </header>
   );

@@ -1,6 +1,6 @@
 import Ambient from "../components/Ambient";
 import Footer from "../components/Footer";
-import SectionStack from "../components/SectionStack";
+//import SectionStack from "../components/SectionStack";
 import Topbar from "../components/Topbar";
 
 export default function StackPage() {
@@ -9,7 +9,7 @@ export default function StackPage() {
       <Ambient />
       <Topbar />
       <main>
-        <SectionStack />
+        {/* <SectionStack /> */}
       </main>
       <Footer />
     </>
