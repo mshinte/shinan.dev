@@ -15,9 +15,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Shinan — Gen Z Web Portfolio",
+  title: "Mohamed Shinan",
   description:
-    "Gen Z portfolio for Shinan: product, design, and code with bold aesthetics and real-world focus."
+    "Portfolio for Shinan: product, design, and code with bold aesthetics and real-world focus."
 };
 
 export default function RootLayout({

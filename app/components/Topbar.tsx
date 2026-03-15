@@ -9,7 +9,7 @@ export default function Topbar() {
           href="/"
         >
           <span className="h-3 w-3 rounded-full bg-accent3" />
-          <span>Shinan</span>
+          <span> Mohamed Shinan</span>
         </Link>
         <nav className="hidden items-center gap-5 font-medium text-muted md:flex" aria-label="Primary">
           <Link className="transition-colors duration-200 hover:text-ink" href="/work">
@@ -18,9 +18,9 @@ export default function Topbar() {
           <Link className="transition-colors duration-200 hover:text-ink" href="/about">
             About
           </Link>
-          <Link className="transition-colors duration-200 hover:text-ink" href="/stack">
+          {/* <Link className="transition-colors duration-200 hover:text-ink" href="/stack">
             Stack
-          </Link>
+          </Link> */}
           <Link className="transition-colors duration-200 hover:text-ink" href="/contact">
             Contact
           </Link>

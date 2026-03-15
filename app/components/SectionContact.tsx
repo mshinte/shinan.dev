@@ -8,20 +8,9 @@ export default function SectionContact() {
             Let’s build something that hits.
           </h2>
           <p className="mt-3 max-w-xl text-muted">
-            Drop a short brief, timeline, and budget. I’ll reply within 48
+            Drop a short brief, timeline, and budget to inquiry@shinan.dev, I’ll reply within 48
             hours.
           </p>
-          <div className="mt-5 grid gap-3 font-medium text-ink">
-            <a className="hover:opacity-70" href="mailto:hello@shinan.studio">
-              hello@shinan.studio
-            </a>
-            <a className="hover:opacity-70" href="https://www.instagram.com" target="_blank" rel="noreferrer">
-              Instagram
-            </a>
-            <a className="hover:opacity-70" href="https://www.behance.net" target="_blank" rel="noreferrer">
-              Behance
-            </a>
-          </div>
         </div>
         <form className="grid gap-4 rounded-[28px] border border-black/10 bg-card p-6">
           <div className="grid gap-2">

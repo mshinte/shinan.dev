@@ -1,7 +1,7 @@
 import Ambient from "./components/Ambient";
 import Footer from "./components/Footer";
 import SectionHero from "./components/SectionHero";
-import SectionHomeCards from "./components/SectionHomeCards";
+//import SectionHomeCards from "./components/SectionHomeCards";
 import Topbar from "./components/Topbar";
 
 export default function HomePage() {
@@ -11,7 +11,6 @@ export default function HomePage() {
       <Topbar />
       <main>
         <SectionHero />
-        <SectionHomeCards />
       </main>
       <Footer />
     </>
