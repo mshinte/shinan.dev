@@ -1,3 +1,5 @@
+import ContactForm from "./ContactForm";
+
 export default function SectionContact() {
   return (
     <section className="relative z-10 py-20 lg:py-24">
@@ -12,50 +14,7 @@ export default function SectionContact() {
             hours.
           </p>
         </div>
-        <form className="grid gap-4 rounded-[24px] border border-black/10 bg-card p-5 sm:rounded-[28px] sm:p-6">
-          <div className="grid gap-2">
-            <label className="text-xs uppercase tracking-[0.18em] text-muted" htmlFor="name">
-              Name
-            </label>
-            <input
-              className="rounded-[12px] border border-black/10 bg-white/90 px-3.5 py-3"
-              id="name"
-              name="name"
-              type="text"
-              placeholder="Your name"
-            />
-          </div>
-          <div className="grid gap-2">
-            <label className="text-xs uppercase tracking-[0.18em] text-muted" htmlFor="email">
-              Email
-            </label>
-            <input
-              className="rounded-[12px] border border-black/10 bg-white/90 px-3.5 py-3"
-              id="email"
-              name="email"
-              type="email"
-              placeholder="name@email.com"
-            />
-          </div>
-          <div className="grid gap-2">
-            <label className="text-xs uppercase tracking-[0.18em] text-muted" htmlFor="project">
-              Project details
-            </label>
-            <textarea
-              className="rounded-[12px] border border-black/10 bg-white/90 px-3.5 py-3"
-              id="project"
-              name="project"
-              rows={4}
-              placeholder="Tell me about the project"
-            />
-          </div>
-          <button
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 font-semibold text-white shadow-button transition-transform duration-200 hover:-translate-y-0.5 sm:w-auto"
-            type="submit"
-          >
-            Send brief
-          </button>
-        </form>
+        <ContactForm />
       </div>
     </section>
   );
