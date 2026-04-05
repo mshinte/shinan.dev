@@ -1,6 +1,6 @@
 export default function SectionAbout() {
   return (
-    <section className="relative z-10 py-24">
+    <section className="relative z-10 py-20 lg:py-24">
       <div className="mx-auto grid w-[min(1120px,90vw)] items-start gap-10 lg:grid-cols-2">
         <div>
           <p className="mb-2 text-[13px] font-semibold uppercase tracking-[0.2em] text-muted">About</p>
@@ -44,7 +44,7 @@ export default function SectionAbout() {
           </div>
         </div>
         <div className="grid gap-5">
-          <div className="rounded-[18px] border border-black/10 bg-glass p-6 backdrop-blur-xl">
+          <div className="rounded-[18px] border border-black/10 bg-glass p-5 backdrop-blur-xl sm:p-6">
             <p className="text-xs uppercase tracking-[0.2em] text-muted">Currently</p>
             <h3 className="my-3 font-display text-[1.4rem]">Building for youth-led brands.</h3>
             <p className="text-muted">
@@ -56,7 +56,7 @@ export default function SectionAbout() {
               <span className="rounded-full bg-black/5 px-3 py-1.5 text-xs">Freelance</span>
             </div>
           </div>
-          <div className="rounded-[18px] border border-black/10 bg-[#fff9f2] p-6">
+          <div className="rounded-[18px] border border-black/10 bg-[#fff9f2] p-5 sm:p-6">
             <p className="text-xs uppercase tracking-[0.2em] text-muted">Services</p>
             <ul className="mt-4 grid list-none gap-3">
               <li>Design systems</li>

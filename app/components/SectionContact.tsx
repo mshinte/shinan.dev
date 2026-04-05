@@ -1,6 +1,6 @@
 export default function SectionContact() {
   return (
-    <section className="relative z-10 py-24">
+    <section className="relative z-10 py-20 lg:py-24">
       <div className="mx-auto grid w-[min(1120px,90vw)] items-start gap-10 lg:grid-cols-2">
         <div>
           <p className="mb-2 text-[13px] font-semibold uppercase tracking-[0.2em] text-muted">Contact</p>
@@ -12,7 +12,7 @@ export default function SectionContact() {
             hours.
           </p>
         </div>
-        <form className="grid gap-4 rounded-[28px] border border-black/10 bg-card p-6">
+        <form className="grid gap-4 rounded-[24px] border border-black/10 bg-card p-5 sm:rounded-[28px] sm:p-6">
           <div className="grid gap-2">
             <label className="text-xs uppercase tracking-[0.18em] text-muted" htmlFor="name">
               Name
@@ -50,7 +50,7 @@ export default function SectionContact() {
             />
           </div>
           <button
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 font-semibold text-white shadow-button transition-transform duration-200 hover:-translate-y-0.5"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 font-semibold text-white shadow-button transition-transform duration-200 hover:-translate-y-0.5 sm:w-auto"
             type="submit"
           >
             Send brief

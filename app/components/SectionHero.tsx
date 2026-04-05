@@ -1,7 +1,7 @@
 export default function SectionHero() {
   return (
-    <section className="relative z-10 pb-24 pt-[120px]">
-      <div className="mx-auto w-[min(960px,90vw)]">
+    <section className="relative z-10 pb-20 pt-20 sm:pt-24 lg:pb-24 lg:pt-[120px]">
+      <div className="mx-auto grid w-[min(1120px,90vw)] items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:gap-12">
         <div className="grid gap-6">
           <div className="inline-flex w-fit items-center rounded-full bg-accent px-3.5 py-1.5 text-sm font-semibold">
             Available for collabs
@@ -42,6 +42,57 @@ export default function SectionHero() {
               Motion UI
             </span>
           </div> */}
+        </div>
+        <div className="relative">
+          <div className="hero-type-block relative overflow-hidden rounded-[28px] border border-black/10 bg-white/70 px-5 py-6 shadow-soft backdrop-blur-sm sm:rounded-[32px] sm:px-8 sm:py-9">
+            <div className="absolute inset-x-6 top-6 h-px bg-[linear-gradient(90deg,transparent,rgba(16,16,18,0.18),transparent)]" />
+            <div className="grid gap-3">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-muted">
+                Direction
+              </p>
+              <div className="hero-word-stack leading-none">
+                <span className="hero-word hero-word--solid block font-display text-[clamp(2.8rem,8vw,5.2rem)] uppercase tracking-[-0.05em] text-ink">
+                  Build
+                </span>
+                <span className="hero-word hero-word--outline block font-display text-[clamp(2.8rem,8vw,5.2rem)] uppercase tracking-[-0.05em] text-transparent [-webkit-text-stroke:1.5px_#101012]">
+                  Culture
+                </span>
+                <span className="hero-word hero-word--accent block font-display text-[clamp(2.8rem,8vw,5.2rem)] uppercase tracking-[-0.05em] text-accent3">
+                  Motion
+                </span>
+              </div>
+              <p className="max-w-sm text-sm text-muted sm:text-[0.95rem]">
+                Frontend systems shaped like campaigns: sharp hierarchy, clear
+                interaction, and just enough movement to feel alive.
+              </p>
+            </div>
+            <div className="hero-ribbon mt-8 overflow-hidden rounded-full border border-black/10 bg-base/70 py-2">
+              <div className="hero-ribbon__track flex min-w-max items-center gap-4 px-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-muted">
+                <span>Design systems</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-accent3" />
+                <span>Product launches</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-accent2" />
+                <span>Frontend direction</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                <span>Motion language</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-accent3" />
+                <span>Design systems</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-accent2" />
+                <span>Product launches</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                <span>Frontend direction</span>
+              </div>
+            </div>
+            <div className="pointer-events-none absolute -right-3 top-10 hidden rounded-full border border-black/10 bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-ink shadow-md sm:block">
+              Loud ideas
+            </div>
+            <div className="pointer-events-none absolute bottom-5 left-3 rounded-full border border-black/10 bg-accent px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink shadow-md sm:px-4 sm:text-[11px]">
+              Fast delivery
+            </div>
+            <div className="pointer-events-none absolute right-4 top-[38%] hidden rounded-full border border-black/10 bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-muted shadow-md md:block">
+              Story-first UI
+            </div>
+          </div>
         </div>
       </div>
     </section>

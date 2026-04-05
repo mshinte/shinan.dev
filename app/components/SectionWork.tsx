@@ -3,7 +3,7 @@ import type { CSSProperties } from "react";
 
 export default function SectionWork() {
   return (
-    <section className="relative z-10 py-24">
+    <section className="relative z-10 py-20 lg:py-24">
       <div className="mx-auto w-[min(1120px,90vw)]">
         <div className="mb-12 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div>
@@ -22,33 +22,33 @@ export default function SectionWork() {
           </Link> */}
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-1">
+        <div className="grid gap-5">
           <article
-            className="grid min-h-[240px] gap-4 overflow-hidden rounded-[18px] border border-black/10 bg-card p-6 opacity-0 translate-y-4 animate-reveal [animation-delay:var(--delay,0s)]"
+            className="grid min-h-[240px] gap-4 overflow-hidden rounded-[18px] border border-black/10 bg-card p-5 opacity-0 translate-y-4 animate-reveal sm:p-6 [animation-delay:var(--delay,0s)]"
             style={{ "--delay": "0s" } as CSSProperties}
           >
             <div className="text-xs uppercase tracking-[0.2em] text-muted">Final Year Project</div>
-            <h3 className="font-display text-[1.3rem]">Community Centric Events Management System</h3>
+            <h3 className="font-display text-[1.2rem] sm:text-[1.3rem]">Community Centric Events Management System</h3>
             <p className="text-muted">
               A Community-Centric Event Management System that enables local organisers to create and manage events efficiently,
                while also providing tools for real-time communication and secure QR ticketing.
             </p>
-            <div className="flex items-center justify-between text-sm text-muted">
+            <div className="flex flex-col gap-1 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
               <span>Progressive Web App</span>
               <span>2025</span>
             </div>
           </article>
 
           <article
-            className="grid min-h-[240px] gap-4 overflow-hidden rounded-[18px] border border-black/10 bg-card p-6 opacity-0 translate-y-4 animate-reveal [animation-delay:var(--delay,0s)]"
+            className="grid min-h-[240px] gap-4 overflow-hidden rounded-[18px] border border-black/10 bg-card p-5 opacity-0 translate-y-4 animate-reveal sm:p-6 [animation-delay:var(--delay,0s)]"
             style={{ "--delay": "0.1s" } as CSSProperties} >
 
             <div className="text-xs uppercase tracking-[0.2em] text-muted">Internship - Product</div>
-            <h3 className="font-display text-[1.3rem]">Asset Management System</h3>
+            <h3 className="font-display text-[1.2rem] sm:text-[1.3rem]">Asset Management System</h3>
             <p className="text-muted">
               A comprehensive asset management system designed to streamline the tracking and maintenance of digital assets across various departments.
             </p>
-            <div className="flex items-center justify-between text-sm text-muted">
+            <div className="flex flex-col gap-1 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
               <span>Web App</span>
               <span>2025</span>
             </div>
