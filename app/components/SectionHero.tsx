@@ -1,10 +1,7 @@
-import Link from "next/link";
-import AvatarMascot from "./AvatarMascot";
-
 export default function SectionHero() {
   return (
     <section className="relative z-10 pb-24 pt-[120px]">
-      <div className="mx-auto grid w-[min(1120px,90vw)] items-center gap-12 lg:grid-cols-2">
+      <div className="mx-auto w-[min(960px,90vw)]">
         <div className="grid gap-6">
           <div className="inline-flex w-fit items-center rounded-full bg-accent px-3.5 py-1.5 text-sm font-semibold">
             Available for collabs
@@ -45,9 +42,6 @@ export default function SectionHero() {
               Motion UI
             </span>
           </div> */}
-        </div>
-        <div className="relative flex items-center justify-center">
-          <AvatarMascot />
         </div>
       </div>
     </section>
