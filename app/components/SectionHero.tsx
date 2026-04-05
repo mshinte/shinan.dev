@@ -86,9 +86,6 @@ export default function SectionHero() {
             <div className="pointer-events-none absolute -right-3 top-10 hidden rounded-full border border-black/10 bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-ink shadow-md sm:block">
               Loud ideas
             </div>
-            <div className="pointer-events-none absolute bottom-5 left-3 rounded-full border border-black/10 bg-accent px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink shadow-md sm:px-4 sm:text-[11px]">
-              Fast delivery
-            </div>
             <div className="pointer-events-none absolute right-4 top-[38%] hidden rounded-full border border-black/10 bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-muted shadow-md md:block">
               Story-first UI
             </div>
