@@ -44,12 +44,14 @@ export default function SectionHero() {
           </div> */}
         </div>
         <div className="relative min-w-0">
-          <div className="hero-type-block relative overflow-hidden rounded-[28px] border border-black/10 bg-white/70 px-5 py-6 shadow-soft backdrop-blur-sm sm:rounded-[32px] sm:px-8 sm:py-9">
-            <div className="absolute inset-x-6 top-6 h-px bg-[linear-gradient(90deg,transparent,rgba(16,16,18,0.18),transparent)]" />
-            <div className="grid gap-3">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-muted">
+          <div className="hero-type-block relative overflow-hidden rounded-[28px] border border-black/10 bg-white/70 px-5 py-5 shadow-soft backdrop-blur-sm sm:rounded-[32px] sm:px-8 sm:py-7">
+            <div className="mb-4 grid gap-2">
+              <p className="justify-self-center text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-muted">
                 Direction
               </p>
+              <div className="h-px bg-[linear-gradient(90deg,transparent,rgba(16,16,18,0.18),transparent)]" />
+            </div>
+            <div className="grid gap-3">
               <div className="hero-word-stack min-w-0 leading-none">
                 <span className="hero-word hero-word--solid block break-words font-display text-[clamp(2.8rem,8vw,5.2rem)] uppercase tracking-[-0.05em] text-ink">
                   Build
