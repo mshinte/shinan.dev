@@ -2,7 +2,7 @@ export default function SectionHero() {
   return (
     <section className="relative z-10 pb-20 pt-20 sm:pt-24 lg:pb-24 lg:pt-[120px]">
       <div className="mx-auto grid w-[min(1120px,90vw)] items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:gap-12">
-        <div className="grid gap-6">
+        <div className="grid min-w-0 gap-6">
           <div className="inline-flex w-fit items-center rounded-full bg-accent px-3.5 py-1.5 text-sm font-semibold">
             Available for collabs
           </div>
@@ -43,21 +43,21 @@ export default function SectionHero() {
             </span>
           </div> */}
         </div>
-        <div className="relative">
+        <div className="relative min-w-0">
           <div className="hero-type-block relative overflow-hidden rounded-[28px] border border-black/10 bg-white/70 px-5 py-6 shadow-soft backdrop-blur-sm sm:rounded-[32px] sm:px-8 sm:py-9">
             <div className="absolute inset-x-6 top-6 h-px bg-[linear-gradient(90deg,transparent,rgba(16,16,18,0.18),transparent)]" />
             <div className="grid gap-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-muted">
                 Direction
               </p>
-              <div className="hero-word-stack leading-none">
-                <span className="hero-word hero-word--solid block font-display text-[clamp(2.8rem,8vw,5.2rem)] uppercase tracking-[-0.05em] text-ink">
+              <div className="hero-word-stack min-w-0 leading-none">
+                <span className="hero-word hero-word--solid block break-words font-display text-[clamp(2.8rem,8vw,5.2rem)] uppercase tracking-[-0.05em] text-ink">
                   Build
                 </span>
-                <span className="hero-word hero-word--outline block font-display text-[clamp(2.8rem,8vw,5.2rem)] uppercase tracking-[-0.05em] text-transparent [-webkit-text-stroke:1.5px_#101012]">
+                <span className="hero-word hero-word--outline block break-words font-display text-[clamp(2.8rem,8vw,5.2rem)] uppercase tracking-[-0.05em] text-transparent [-webkit-text-stroke:1.5px_#101012]">
                   Culture
                 </span>
-                <span className="hero-word hero-word--accent block font-display text-[clamp(2.8rem,8vw,5.2rem)] uppercase tracking-[-0.05em] text-accent3">
+                <span className="hero-word hero-word--accent block break-words font-display text-[clamp(2.8rem,8vw,5.2rem)] uppercase tracking-[-0.05em] text-accent3">
                   Motion
                 </span>
               </div>

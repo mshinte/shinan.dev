@@ -28,7 +28,7 @@ export default function SectionWork() {
             style={{ "--delay": "0s" } as CSSProperties}
           >
             <div className="text-xs uppercase tracking-[0.2em] text-muted">Final Year Project</div>
-            <h3 className="font-display text-[1.2rem] sm:text-[1.3rem]">Community Centric Events Management System</h3>
+            <h3 className="break-words font-display text-[1.2rem] sm:text-[1.3rem]">Community Centric Events Management System</h3>
             <p className="text-muted">
               A Community-Centric Event Management System that enables local organisers to create and manage events efficiently,
                while also providing tools for real-time communication and secure QR ticketing.
@@ -44,7 +44,7 @@ export default function SectionWork() {
             style={{ "--delay": "0.1s" } as CSSProperties} >
 
             <div className="text-xs uppercase tracking-[0.2em] text-muted">Internship - Product</div>
-            <h3 className="font-display text-[1.2rem] sm:text-[1.3rem]">Asset Management System</h3>
+            <h3 className="break-words font-display text-[1.2rem] sm:text-[1.3rem]">Asset Management System</h3>
             <p className="text-muted">
               A comprehensive asset management system designed to streamline the tracking and maintenance of digital assets across various departments.
             </p>

@@ -6,9 +6,12 @@
   color-scheme: light;
 }
 
+html,
 body {
   background: #f7f4ef;
   color: #101012;
+  width: 100%;
+  overflow-x: clip;
 }
 
 .ambient {
@@ -90,6 +93,7 @@ body {
 
 .hero-ribbon__track {
   animation: hero-ribbon-slide 18s linear infinite;
+  will-change: transform;
 }
 
 @keyframes hero-word-drift {
@@ -125,6 +129,10 @@ body {
     gap: 0.75rem;
     padding-left: 0.875rem;
     padding-right: 0.875rem;
+  }
+
+  .hero-word-stack {
+    max-width: 100%;
   }
 }
 
