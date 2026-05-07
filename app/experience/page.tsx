@@ -1,17 +1,12 @@
-import Ambient from "../components/Ambient";
-import Footer from "../components/Footer";
+import type { Metadata } from "next";
 import SectionWork from "../components/SectionWork";
-import Topbar from "../components/Topbar";
 
-export default function WorkPage() {
-  return (
-    <>
-      <Ambient />
-      <Topbar />
-      <main>
-        <SectionWork />
-      </main>
-      <Footer />
-    </>
-  );
+export const metadata: Metadata = {
+  title: "Experience | Mohamed Shinan",
+  description:
+    "Selected projects and experience from Mohamed Shinan across web apps, product interfaces, and frontend delivery."
+};
+
+export default function ExperiencePage() {
+  return <SectionWork />;
 }

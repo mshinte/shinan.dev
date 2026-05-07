@@ -1,17 +1,12 @@
-import Ambient from "../components/Ambient";
-import Footer from "../components/Footer";
+import type { Metadata } from "next";
 import SectionContact from "../components/SectionContact";
-import Topbar from "../components/Topbar";
+
+export const metadata: Metadata = {
+  title: "Contact | Mohamed Shinan",
+  description:
+    "Contact Mohamed Shinan for portfolio inquiries, web design, frontend builds, and product-focused digital experiences."
+};
 
 export default function ContactPage() {
-  return (
-    <>
-      <Ambient />
-      <Topbar />
-      <main>
-        <SectionContact />
-      </main>
-      <Footer />
-    </>
-  );
+  return <SectionContact />;
 }

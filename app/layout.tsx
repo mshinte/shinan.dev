@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Manrope, Space_Grotesk } from "next/font/google";
+import Ambient from "./components/Ambient";
+import Footer from "./components/Footer";
+import Topbar from "./components/Topbar";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -28,7 +31,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${manrope.variable} ${spaceGrotesk.variable} bg-base font-sans text-ink leading-relaxed overflow-x-hidden`}>
-        {children}
+        <Ambient />
+        <Topbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

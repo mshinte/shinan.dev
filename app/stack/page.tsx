@@ -1,17 +1,12 @@
-import Ambient from "../components/Ambient";
-import Footer from "../components/Footer";
+import type { Metadata } from "next";
 import SectionStack from "../components/SectionStack";
-import Topbar from "../components/Topbar";
+
+export const metadata: Metadata = {
+  title: "Stack | Mohamed Shinan",
+  description:
+    "The design, frontend, product, and delivery stack Mohamed Shinan uses to build responsive web experiences."
+};
 
 export default function StackPage() {
-  return (
-    <>
-      <Ambient />
-      <Topbar />
-      <main>
-        <SectionStack />
-      </main>
-      <Footer />
-    </>
-  );
+  return <SectionStack />;
 }

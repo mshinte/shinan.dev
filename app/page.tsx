@@ -1,18 +1,18 @@
-import Ambient from "./components/Ambient";
-import Footer from "./components/Footer";
+import SectionAbout from "./components/SectionAbout";
+import SectionContact from "./components/SectionContact";
 import SectionHero from "./components/SectionHero";
+import SectionStack from "./components/SectionStack";
+import SectionWork from "./components/SectionWork";
 //import SectionHomeCards from "./components/SectionHomeCards";
-import Topbar from "./components/Topbar";
 
 export default function HomePage() {
   return (
     <>
-      <Ambient />
-      <Topbar />
-      <main>
-        <SectionHero />
-      </main>
-      <Footer />
+      <SectionHero />
+      <SectionAbout />
+      <SectionWork />
+      <SectionStack />
+      <SectionContact />
     </>
   );
 }

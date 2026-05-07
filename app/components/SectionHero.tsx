@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SectionHero() {
   return (
     <section className="relative z-10 pb-20 pt-20 sm:pt-24 lg:pb-24 lg:pt-[120px]">
@@ -14,6 +16,20 @@ export default function SectionHero() {
             and clean engineering. Cool, but not chaotic. Simple, but never
             boring.
           </p>
+          <div className="flex flex-wrap gap-4">
+            <Link
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 font-semibold text-white shadow-button transition-transform duration-200 hover:-translate-y-0.5"
+              href="/contact"
+            >
+              Contact me
+            </Link>
+            <Link
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white/60 px-6 py-3 font-semibold text-ink transition-colors duration-200 hover:bg-white"
+              href="/experience"
+            >
+              View experience
+            </Link>
+          </div>
           {/* <div className="flex flex-wrap gap-4">
             <Link
               className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 font-semibold text-white shadow-button transition-transform duration-200 hover:-translate-y-0.5"
