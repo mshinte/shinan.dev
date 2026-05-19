@@ -80,8 +80,8 @@ function DesignPlaceholderCard() {
   }
 
   return (
-    <article className="grid gap-5 overflow-hidden rounded-[18px] border border-black/10 bg-card p-5 sm:grid-cols-[minmax(0,0.95fr)_minmax(260px,1.05fr)] sm:p-6">
-      <div className="relative min-h-[220px] overflow-hidden rounded-[14px] border border-black/10 bg-base">
+    <article className="grid gap-5 overflow-hidden rounded-[18px] border border-black/10 bg-card p-5 sm:grid-cols-[minmax(0,1.55fr)_minmax(220px,0.45fr)] sm:p-6">
+      <div className="relative min-h-[300px] overflow-hidden rounded-[14px] border border-black/10 bg-base">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(16,16,18,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(16,16,18,0.06)_1px,transparent_1px)] bg-[size:28px_28px]" />
         <div className="absolute inset-x-12 inset-y-6 rounded-[12px] border border-black/10 bg-white/80 shadow-soft">
           <div className="h-10 border-b border-black/10 bg-white/70" />
