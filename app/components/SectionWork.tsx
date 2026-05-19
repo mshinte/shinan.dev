@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import { useState } from "react";
 
-type WorkFilter = "development" | "design" | "all";
+type WorkFilter = "development" | "design";
 
 const projects = [
   {
@@ -37,11 +37,10 @@ const projects = [
   stack: string[];
   type: string;
   year: string;
-  discipline: Exclude<WorkFilter, "all">;
+  discipline: WorkFilter;
 }>;
 
 const filters: Array<{ label: string; value: WorkFilter }> = [
-  { label: "All", value: "all" },
   { label: "Development", value: "development" },
   { label: "Design", value: "design" }
 ];
@@ -142,20 +141,16 @@ function DesignPlaceholderCard() {
 }
 
 export default function SectionWork() {
-  const [activeFilter, setActiveFilter] = useState<WorkFilter>("all");
-  const visibleProjects =
-    activeFilter === "all"
-      ? projects
-      : projects.filter((project) => project.discipline === activeFilter);
+  const [activeFilter, setActiveFilter] = useState<WorkFilter>("development");
+  const visibleProjects = projects.filter(
+    (project) => project.discipline === activeFilter
+  );
 
   return (
-    <section className="relative z-10 pb-4 pt-20 lg:pb-6 lg:pt-24">
+    <section className="relative z-10 pb-4 pt-10 lg:pb-6 lg:pt-12">
       <div className="mx-auto w-[min(1120px,90vw)]">
         <div className="mb-8 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="mb-2 text-[13px] font-semibold uppercase tracking-[0.2em] text-muted">
-              Featured work
-            </p>
             <h2 className="font-display text-[clamp(2rem,3vw,3rem)] leading-[1.1] tracking-[-0.02em]">
               Projects I have worked on.
             </h2>
