@@ -9,12 +9,11 @@ export default function SectionHero() {
             Available for collabs
           </div>
           <h1 className="font-display text-[clamp(2.6rem,5vw,4.6rem)] leading-[1.05] tracking-[-0.03em]">
-            I build websites that feel like a cultural moment.
+            I turn ideas into fast, thoughtful websites.
           </h1>
           <p className="max-w-xl text-[1.05rem] text-muted">
-            I’m Shinan - a web maker blending product thinking, playful motion,
-            and clean engineering. Cool, but not chaotic. Simple, but never
-            boring.
+            I’m Shinan, a web developer focused on building practical, reliable
+            digital experiences.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link

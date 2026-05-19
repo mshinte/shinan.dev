@@ -20,7 +20,6 @@ export default function Topbar() {
           className="inline-flex max-w-full items-center gap-2.5 self-start break-words font-display font-bold tracking-[0.04em]"
           href="/"
         >
-          <span className="h-3 w-3 rounded-full bg-accent3" />
           <span className="max-w-full"> Mohamed Shinan</span>
         </Link>
         <nav

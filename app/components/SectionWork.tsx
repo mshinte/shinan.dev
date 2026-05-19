@@ -26,7 +26,7 @@ const projects = [
 
 export default function SectionWork() {
   return (
-    <section className="relative z-10 py-20 lg:py-24">
+    <section className="relative z-10 pb-4 pt-20 lg:pb-6 lg:pt-24">
       <div className="mx-auto w-[min(1120px,90vw)]">
         <div className="mb-12 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div>

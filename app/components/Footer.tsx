@@ -31,7 +31,7 @@ const professionalLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 border-t border-black/10 py-8 text-sm text-muted">
+    <footer className="relative z-10 border-t border-black/10 py-6 text-sm text-muted">
       <div className="mx-auto flex w-[min(1120px,90vw)] flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p>© {new Date().getFullYear()} Mohamed Shinan</p>
         <nav className="flex flex-wrap items-center gap-3" aria-label="Professional links">
