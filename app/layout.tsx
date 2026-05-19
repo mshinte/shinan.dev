@@ -30,10 +30,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${spaceGrotesk.variable} bg-base font-sans text-ink leading-relaxed overflow-x-hidden`}>
+      <body className={`${manrope.variable} ${spaceGrotesk.variable} flex min-h-screen flex-col bg-base font-sans text-ink leading-relaxed overflow-x-hidden`}>
         <Ambient />
         <Topbar />
-        <main className="pt-[104px] sm:pt-[76px]">{children}</main>
+        <main className="flex-1 pt-[104px] sm:pt-[76px]">{children}</main>
         <Footer />
       </body>
     </html>
