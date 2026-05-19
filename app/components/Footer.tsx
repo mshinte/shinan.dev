@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 const professionalLinks = [
   {
     href: "https://www.linkedin.com/in/mohamedshinan/",
@@ -29,6 +31,28 @@ const professionalLinks = [
   }
 ];
 
+type IconLinkProps = {
+  href: string;
+  icon: ReactNode;
+  label: string;
+};
+
+function IconLink({ href, icon, label }: IconLinkProps) {
+  const isEmail = href.startsWith("mailto:");
+
+  return (
+    <a
+      aria-label={label}
+      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/60 text-ink transition-colors duration-200 hover:bg-ink hover:text-white"
+      href={href}
+      rel={isEmail ? undefined : "noreferrer"}
+      target={isEmail ? undefined : "_blank"}
+    >
+      {icon}
+    </a>
+  );
+}
+
 export default function Footer() {
   return (
     <footer className="relative z-10 border-t border-black/10 py-6 text-sm text-muted">
@@ -36,16 +60,12 @@ export default function Footer() {
         <p>© {new Date().getFullYear()} Mohamed Shinan</p>
         <nav className="flex flex-wrap items-center gap-3" aria-label="Professional links">
           {professionalLinks.map((link) => (
-            <a
-              aria-label={link.label}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/60 text-ink transition-colors duration-200 hover:bg-ink hover:text-white"
+            <IconLink
               href={link.href}
+              icon={link.icon}
               key={link.label}
-              rel={link.href.startsWith("mailto:") ? undefined : "noreferrer"}
-              target={link.href.startsWith("mailto:") ? undefined : "_blank"}
-            >
-              {link.icon}
-            </a>
+              label={link.label}
+            />
           ))}
         </nav>
       </div>
