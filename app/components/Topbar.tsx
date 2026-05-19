@@ -4,9 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { href: "/about", label: "About" },
+  // { href: "/about", label: "About" },
   { href: "/experience", label: "Experience" },
-  { href: "/stack", label: "Stack" },
+  // { href: "/stack", label: "Stack" },
   { href: "/contact", label: "Contact" }
 ];
 
@@ -14,7 +14,7 @@ export default function Topbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-10 border-b border-black/10 bg-base/90 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-base/90 backdrop-blur-xl">
       <div className="mx-auto flex w-[min(1120px,90vw)] flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:py-[18px]">
         <Link
           className="inline-flex max-w-full items-center gap-2.5 self-start break-words font-display font-bold tracking-[0.04em]"

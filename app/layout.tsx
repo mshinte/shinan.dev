@@ -33,7 +33,7 @@ export default function RootLayout({
       <body className={`${manrope.variable} ${spaceGrotesk.variable} bg-base font-sans text-ink leading-relaxed overflow-x-hidden`}>
         <Ambient />
         <Topbar />
-        <main>{children}</main>
+        <main className="pt-[104px] sm:pt-[76px]">{children}</main>
         <Footer />
       </body>
     </html>
