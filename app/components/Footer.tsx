@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 const professionalLinks = [
   {
-    href: "https://www.linkedin.com/in/mohamedshinan/",
+    href: "https://linkedin.com/in/mohamed-shinan-16aa09272",
     label: "LinkedIn",
     icon: (
       <svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -11,7 +11,7 @@ const professionalLinks = [
     )
   },
   {
-    href: "https://github.com/mohamedshinan",
+    href: "https://github.com/mshinte",
     label: "GitHub",
     icon: (
       <svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
