@@ -92,7 +92,7 @@ export default function ContactForm() {
           id="email"
           name="email"
           type="email"
-          placeholder="name@email.com"
+          placeholder="youremail@sample.com"
         />
       </div>
       <div className="hidden" aria-hidden="true">
