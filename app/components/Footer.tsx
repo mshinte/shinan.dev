@@ -19,16 +19,16 @@ const professionalLinks = [
       </svg>
     )
   },
-  {
-    href: "mailto:inquiry@shinan.dev",
-    label: "Email",
-    icon: (
-      <svg aria-hidden="true" className="h-5 w-5" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24">
-        <path d="M4 6h16v12H4z" />
-        <path d="m4 7 8 6 8-6" />
-      </svg>
-    )
-  }
+  // {
+  //   href: "mailto:inquiry@shinan.dev",
+  //   label: "Email",
+  //   icon: (
+  //     <svg aria-hidden="true" className="h-5 w-5" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24">
+  //       <path d="M4 6h16v12H4z" />
+  //       <path d="m4 7 8 6 8-6" />
+  //     </svg>
+  //   )
+  // }
 ];
 
 type IconLinkProps = {
