@@ -18,10 +18,11 @@ export default function ContactForm() {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const form = event.currentTarget;
     setIsSubmitting(true);
     setFormState(initialState);
 
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     const payload = {
       name: String(formData.get("name") ?? "").trim(),
       email: String(formData.get("email") ?? "").trim(),
@@ -48,7 +49,7 @@ export default function ContactForm() {
         return;
       }
 
-      event.currentTarget.reset();
+      form.reset();
       setFormState({
         error: "",
         success: "Message sent. I will get back to you soon."
