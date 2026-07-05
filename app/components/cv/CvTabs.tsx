@@ -251,7 +251,7 @@ export default function CvTabs() {
               <h2 className="font-display text-xl">Guinness World Record participation</h2>
               <p className="mt-3 max-w-3xl text-muted">
                 Participated with 452 people in performing static apnea simultaneously
-                for 1 minute and 30 seconds during Nevvaa2 on 1 October 2022. Organised
+                for 1 minute and 30 seconds (Nevvaa2 on 1 October 2022). Organised
                 by Free-dive Maldives, the event demonstrated teamwork and commitment
                 toward achieving a shared goal.
               </p>
