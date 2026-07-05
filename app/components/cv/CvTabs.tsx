@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { projects } from "../work/workData";
 
 const tabs = [
   { id: "education", label: "Education" },
@@ -15,24 +14,92 @@ type TabId = (typeof tabs)[number]["id"];
 
 const skillGroups = [
   {
-    label: "Frontend",
-    items: ["Next.js", "React", "TypeScript", "Tailwind CSS"]
+    label: "Languages",
+    items: ["HTML", "CSS", "SQL", "JavaScript"]
   },
   {
-    label: "Design",
-    items: ["Figma", "Wireframing", "Responsive UI", "Interaction design"]
+    label: "Frameworks & Libraries",
+    items: ["React", "Next.js", "Tailwind CSS", "Node.js"]
   },
   {
-    label: "Product",
-    items: ["Product thinking", "Information architecture", "Workflow mapping"]
+    label: "Tools & Technologies",
+    items: ["GitHub", "Figma", "PostgreSQL", "VS Code"]
   }
 ];
 
-function EmptySection({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="border-l-2 border-black/15 pl-4 text-muted">{children}</p>
-  );
-}
+const education = [
+  {
+    qualification: "Bachelor of Science (Hons) in Software Engineering",
+    institution: "Asia Pacific University of Technology & Innovation",
+    year: "2026"
+  },
+  {
+    qualification: "Certificate 4 in Information Technology",
+    institution: "Villa College",
+    year: "2022"
+  },
+  {
+    qualification: "ABE UK Diploma Level 4 in Marketing Management",
+    institution: "Clique College",
+    year: "2014"
+  }
+];
+
+const workExperience = [
+  {
+    title: "UI/UX Design & Development Intern",
+    company: "PiNetworks Pvt Ltd",
+    location: "Male, Maldives",
+    period: "Jan-May 2025",
+    responsibilities: [
+      "Designed user-centered UI/UX for web applications by creating wireframes, high-fidelity mockups, and responsive front-end components.",
+      "Collaborated with cross-functional teams to translate business requirements into intuitive user experiences, improve usability through iterative feedback, and contribute to MVP development, testing, and design refinement."
+    ]
+  },
+  {
+    title: "Officer, Sales",
+    company: "Maldives Airports Company Limited (MACL)",
+    location: "Male, Maldives",
+    period: "2021-2023",
+    responsibilities: [
+      "Maintained product displays in accordance with planograms, ensured timely stock replenishment, and assisted customers with product recommendations and suitable alternatives.",
+      "Worked toward achieving sales targets while providing excellent service to local and international customers, including VIP guests at Velana International Airport duty-free outlets."
+    ]
+  },
+  {
+    title: "Assistant Officer, Cash",
+    company: "Maldives Airports Company Limited (MACL)",
+    location: "Male, Maldives",
+    period: "2015-2021",
+    responsibilities: [
+      "Managed cash transactions and ensured efficient checkout operations while delivering excellent customer service at Duty-Free Maldives.",
+      "Assisted with sales during peak periods and staff shortages, helping maintain smooth shop operations and a positive customer experience."
+    ]
+  }
+];
+
+const leadershipExperience = [
+  {
+    title: "Events Manager",
+    organisation: "Clique College Student Association",
+    period: "2014",
+    responsibilities: [
+      "Organised and managed multiple events, developing strong project management, teamwork, and problem-solving skills.",
+      "Coordinated budgets, schedules, and resources to deliver successful events."
+    ]
+  },
+  {
+    title: "Logistics Coordination",
+    organisation: "Staff Night Organising Team",
+    period: "2022",
+    responsibilities: [
+      "Served on the organising team for a staff night, handling logistics planning and execution.",
+      "Supported seamless operations and timely resource allocation through effective coordination."
+    ]
+  }
+];
+
+const interests = ["Diving", "Snorkeling", "Running", "Paragliding", "Fishing"];
 
 export default function CvTabs() {
   const [activeTab, setActiveTab] = useState<TabId>("work");
@@ -75,22 +142,47 @@ export default function CvTabs() {
         role="tabpanel"
       >
         {activeTab === "education" ? (
-          <EmptySection>Education details will be added here.</EmptySection>
+          <div className="grid gap-7">
+            {education.map((entry) => (
+              <article
+                className="flex flex-col gap-2 border-b border-black/10 pb-7 last:border-0"
+                key={entry.qualification}
+              >Thsee
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+                  <h2 className="max-w-2xl font-display text-xl">
+                    {entry.qualification}
+                  </h2>
+                  <span className="text-sm text-muted">{entry.year}</span>
+                </div>
+                <p className="text-muted">{entry.institution}</p>
+              </article>
+            ))}
+          </div>
         ) : null}
 
         {activeTab === "work" ? (
           <div className="grid gap-8">
-            {projects.map((project) => (
-              <article className="border-b border-black/10 pb-8 last:border-0" key={project.title}>
+            {workExperience.map((experience) => (
+              <article
+                className="border-b border-black/10 pb-8 last:border-0"
+                key={`${experience.title}-${experience.period}`}
+              >
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                   <div>
-                    <p className="text-sm font-semibold text-muted">{project.category}</p>
-                    <h2 className="mt-1 font-display text-xl">{project.title}</h2>
+                    <h2 className="font-display text-xl">{experience.title}</h2>
+                    <p className="mt-1 text-sm font-semibold text-muted">
+                      {experience.company} · {experience.location}
+                    </p>
                   </div>
-                  <span className="text-sm text-muted">{project.year}</span>
+                  <span className="shrink-0 text-sm text-muted">
+                    {experience.period}
+                  </span>
                 </div>
-                <p className="mt-3 text-sm font-semibold">{project.role}</p>
-                <p className="mt-2 max-w-3xl text-muted">{project.description}</p>
+                <ul className="mt-4 grid max-w-3xl list-disc gap-2 pl-5 text-muted">
+                  {experience.responsibilities.map((responsibility) => (
+                    <li key={responsibility}>{responsibility}</li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>
@@ -112,13 +204,70 @@ export default function CvTabs() {
         ) : null}
 
         {activeTab === "leadership" ? (
-          <EmptySection>Leadership and volunteering details will be added here.</EmptySection>
+          <div className="grid gap-8">
+            {leadershipExperience.map((experience) => (
+              <article
+                className="border-b border-black/10 pb-8 last:border-0"
+                key={`${experience.title}-${experience.period}`}
+              >
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+                  <div>
+                    <h2 className="font-display text-xl">{experience.title}</h2>
+                    <p className="mt-1 text-sm font-semibold text-muted">
+                      {experience.organisation}
+                    </p>
+                  </div>
+                  <span className="shrink-0 text-sm text-muted">
+                    {experience.period}
+                  </span>
+                </div>
+                <ul className="mt-4 grid max-w-3xl list-disc gap-2 pl-5 text-muted">
+                  {experience.responsibilities.map((responsibility) => (
+                    <li key={responsibility}>{responsibility}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
         ) : null}
 
         {activeTab === "interests" ? (
-          <EmptySection>Hobbies and interests will be added here.</EmptySection>
+          <div className="grid gap-8">
+            <div>
+              <p className="text-muted">Enthusiastic about outdoor adventures such as:</p>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {interests.map((interest) => (
+                  <li
+                    className="rounded-full border border-black/10 bg-white/60 px-4 py-2 text-sm font-semibold"
+                    key={interest}
+                  >
+                    {interest}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <article className="border-l-2 border-ink pl-5">
+              <h2 className="font-display text-xl">Guinness World Record participation</h2>
+              <p className="mt-3 max-w-3xl text-muted">
+                Participated with 452 people in performing static apnea simultaneously
+                for 1 minute and 30 seconds during Nevvaa2 on 1 October 2022. Organised
+                by Free-dive Maldives, the event demonstrated teamwork and commitment
+                toward achieving a shared goal.
+              </p>
+            </article>
+          </div>
         ) : null}
       </section>
+
+      <aside className="border-t border-black/10 py-6">
+        <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">
+          References
+        </h2>
+        <p className="mt-2 text-sm text-muted">
+          Professional references are available upon request.
+        </p>
+      </aside>
     </div>
   );
 }
