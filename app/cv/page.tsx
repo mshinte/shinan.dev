@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { cookies } from "next/headers";
+import CvSessionTimer from "../components/cv/CvSessionTimer";
 import CvTabs from "../components/cv/CvTabs";
 import { CV_SESSION_COOKIE, verifyCvToken } from "../lib/cvAccess";
 
@@ -69,9 +70,12 @@ export default async function CvPage({ searchParams }: CvPageProps) {
           {/* <p className="text-sm font-semibold uppercase tracking-[0.18em] text-muted">
             Private CV
           </p> */}
-          <h1 className="mt-3 font-display text-[clamp(2rem,4vw,3.25rem)] leading-[1.08]">
-            Professional profile
-          </h1>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+            <h1 className="font-display text-[clamp(2rem,4vw,3.25rem)] leading-[1.08]">
+              Professional profile
+            </h1>
+            <CvSessionTimer expiresAt={session.exp} />
+          </div>
           <p className="mt-3 w-full text-justify leading-7 text-muted">
             Recent Bachelor of Software Engineering graduate from Asia Pacific University of Technology and
             Innovation with over seven years of retail experience. Strong problem-solving, communication, and
