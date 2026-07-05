@@ -147,7 +147,7 @@ export default function CvTabs() {
               <article
                 className="flex flex-col gap-2 border-b border-black/10 pb-7 last:border-0"
                 key={entry.qualification}
-              >Thsee
+              >
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                   <h2 className="max-w-2xl font-display text-xl">
                     {entry.qualification}
