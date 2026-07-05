@@ -40,12 +40,12 @@ export default function CvSessionTimer({ expiresAt }: CvSessionTimerProps) {
   }, [expiresAt]);
 
   return (
-    <div className="shrink-0 border-l-2 border-accent3 pl-3 sm:text-right">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+    <div className="shrink-0 border-l-2 border-accent3 pl-3 text-right">
+      <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted">
         Access remaining
       </p>
       <time
-        className="mt-1 block min-w-[8ch] font-display text-lg tabular-nums text-ink"
+        className="mt-0.5 block min-w-[8ch] font-display text-sm tabular-nums text-ink"
         dateTime={
           remainingSeconds === null ? undefined : `PT${remainingSeconds}S`
         }

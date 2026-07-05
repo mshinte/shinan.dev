@@ -70,12 +70,12 @@ export default async function CvPage({ searchParams }: CvPageProps) {
           {/* <p className="text-sm font-semibold uppercase tracking-[0.18em] text-muted">
             Private CV
           </p> */}
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-            <h1 className="font-display text-[clamp(2rem,4vw,3.25rem)] leading-[1.08]">
-              Professional profile
-            </h1>
+          <div className="mb-3 flex justify-end">
             <CvSessionTimer expiresAt={session.exp} />
           </div>
+          <h1 className="font-display text-[clamp(2rem,4vw,3.25rem)] leading-[1.08]">
+            Professional profile
+          </h1>
           <p className="mt-3 w-full text-justify leading-7 text-muted">
             Recent Bachelor of Software Engineering graduate from Asia Pacific University of Technology and
             Innovation with over seven years of retail experience. Strong problem-solving, communication, and
