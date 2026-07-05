@@ -32,6 +32,8 @@ The contact form posts to `app/api/contact/route.ts` and sends email through Res
 RESEND_API_KEY=
 CONTACT_TO_EMAIL=
 CONTACT_FROM_EMAIL=
+CV_ACCESS_SECRET=
+CV_SITE_URL=https://shinan.dev
 ```
 
 ## Scripts
@@ -41,7 +43,11 @@ npm run dev
 npm run build
 npm run start
 npm run typecheck
+npm run cv:invite -- "Company Name" 7
 ```
+
+`cv:invite` creates a signed CV invitation link that remains valid for the
+specified number of days. Opening it creates a one-hour secure viewing session.
 
 ## Project Structure
 

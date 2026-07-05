@@ -9,7 +9,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "cv:invite": "node --env-file=.env.local scripts/create-cv-invite.mjs"
   },
   "dependencies": {
     "next": "^16.1.6",
