@@ -72,7 +72,7 @@ export default async function CvPage({ searchParams }: CvPageProps) {
           <h1 className="mt-3 font-display text-[clamp(2rem,4vw,3.25rem)] leading-[1.08]">
             Professional profile
           </h1>
-          <p className="mt-3 max-w-2xl text-muted">
+          <p className="mt-3 w-full text-justify leading-7 text-muted">
             Recent Bachelor of Software Engineering graduate from Asia Pacific University of Technology and
             Innovation with over seven years of retail experience. Strong problem-solving, communication, and
             teamwork skills, with a solid software engineering foundation. Seeking an opportunity as a Software
