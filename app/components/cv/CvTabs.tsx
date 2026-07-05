@@ -189,17 +189,23 @@ export default function CvTabs() {
         ) : null}
 
         {activeTab === "skills" ? (
-          <div className="grid gap-7 sm:grid-cols-3">
-            {skillGroups.map((group) => (
-              <div key={group.label}>
-                <h2 className="font-display text-lg">{group.label}</h2>
-                <ul className="mt-3 grid gap-2 text-sm text-muted">
-                  {group.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div>
+            <p className="mb-7 max-w-3xl text-muted">
+              These are some of the technologies I have worked with through my
+              studies and professional experience.
+            </p>
+            <div className="grid gap-7 sm:grid-cols-3">
+              {skillGroups.map((group) => (
+                <div key={group.label}>
+                  <h2 className="font-display text-lg">{group.label}</h2>
+                  <ul className="mt-3 grid gap-2 text-sm text-muted">
+                    {group.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         ) : null}
 
