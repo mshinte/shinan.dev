@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const tabs = [
   { id: "education", label: "Education" },
@@ -103,36 +103,82 @@ const interests = ["Diving", "Snorkeling", "Running", "Paragliding", "Fishing"];
 
 export default function CvTabs() {
   const [activeTab, setActiveTab] = useState<TabId>("work");
+  const [canScrollRight, setCanScrollRight] = useState(false);
+  const tabListRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const tabList = tabListRef.current;
+
+    if (!tabList) {
+      return;
+    }
+
+    function updateScrollCue() {
+      if (!tabList) {
+        return;
+      }
+
+      setCanScrollRight(
+        tabList.scrollLeft + tabList.clientWidth < tabList.scrollWidth - 2
+      );
+    }
+
+    updateScrollCue();
+    tabList.addEventListener("scroll", updateScrollCue, { passive: true });
+    window.addEventListener("resize", updateScrollCue);
+
+    return () => {
+      tabList.removeEventListener("scroll", updateScrollCue);
+      window.removeEventListener("resize", updateScrollCue);
+    };
+  }, []);
+
+  function showMoreTabs() {
+    tabListRef.current?.scrollBy({ left: 180, behavior: "smooth" });
+  }
 
   return (
     <div className="mt-8">
-      <div
-        aria-label="CV sections"
-        className="flex gap-1 overflow-x-auto border-b border-black/10 pb-px"
-        role="tablist"
-      >
-        {tabs.map((tab) => {
-          const isActive = activeTab === tab.id;
+      <div className="relative">
+        <div
+          aria-label="CV sections"
+          className="flex snap-x gap-1 overflow-x-auto border-b border-black/10 pb-px pr-11 sm:pr-0"
+          ref={tabListRef}
+          role="tablist"
+        >
+          {tabs.map((tab) => {
+            const isActive = activeTab === tab.id;
 
-          return (
-            <button
-              aria-controls={`cv-panel-${tab.id}`}
-              aria-selected={isActive}
-              className={`shrink-0 border-b-2 px-4 py-3 text-sm font-semibold transition-colors duration-200 ${
-                isActive
-                  ? "border-ink text-ink"
-                  : "border-transparent text-muted hover:text-ink"
-              }`}
-              id={`cv-tab-${tab.id}`}
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              role="tab"
-              type="button"
-            >
-              {tab.label}
-            </button>
-          );
-        })}
+            return (
+              <button
+                aria-controls={`cv-panel-${tab.id}`}
+                aria-selected={isActive}
+                className={`shrink-0 snap-start border-b-2 px-4 py-3 text-sm font-semibold transition-colors duration-200 ${
+                  isActive
+                    ? "border-accent3 text-accent3"
+                    : "border-transparent text-muted hover:text-ink"
+                }`}
+                id={`cv-tab-${tab.id}`}
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                role="tab"
+                type="button"
+              >
+                {tab.label}
+              </button>
+            );
+          })}
+        </div>
+        {canScrollRight ? (
+          <button
+            aria-label="Show more CV sections"
+            className="absolute right-0 top-0 flex h-[49px] w-11 items-center justify-center border-l border-black/10 bg-base text-2xl text-accent3 sm:hidden"
+            onClick={showMoreTabs}
+            type="button"
+          >
+            <span aria-hidden="true">›</span>
+          </button>
+        ) : null}
       </div>
 
       <section
