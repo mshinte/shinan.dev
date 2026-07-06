@@ -153,7 +153,7 @@ export default function CvTabs() {
               <button
                 aria-controls={`cv-panel-${tab.id}`}
                 aria-selected={isActive}
-                className={`shrink-0 snap-start border-b-2 px-4 py-3 text-sm font-semibold transition-colors duration-200 ${
+                className={`shrink-0 snap-start border-b-2 px-4 py-3 text-sm font-semibold transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent3 focus-visible:ring-inset ${
                   isActive
                     ? "border-accent3 text-accent3"
                     : "border-transparent text-muted hover:text-ink"
