@@ -105,7 +105,7 @@ export default async function CvPage({ searchParams }: CvPageProps) {
             Private CV
           </p> */}
           <div className="mb-3 flex justify-end">
-            <CvSessionTimer expiresAt={session.exp} />
+            <CvSessionTimer company={session.company} expiresAt={session.exp} />
           </div>
           <h1 className="font-display text-[clamp(2rem,4vw,3.25rem)] leading-[1.08]">
             Professional profile

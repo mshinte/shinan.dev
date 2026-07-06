@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 type CvSessionTimerProps = {
+  company: string;
   expiresAt: number;
 };
 
@@ -16,7 +17,7 @@ function formatRemainingTime(totalSeconds: number) {
     .join(":");
 }
 
-export default function CvSessionTimer({ expiresAt }: CvSessionTimerProps) {
+export default function CvSessionTimer({ company, expiresAt }: CvSessionTimerProps) {
   const [remainingSeconds, setRemainingSeconds] = useState<number | null>(null);
 
   useEffect(() => {
@@ -40,7 +41,10 @@ export default function CvSessionTimer({ expiresAt }: CvSessionTimerProps) {
   }, [expiresAt]);
 
   return (
-    <div className="shrink-0 border-l-2 border-accent3 pl-3 text-right">
+    <div className="max-w-[220px] shrink-0 border-l-2 border-accent3 pl-3 text-right">
+      <p className="break-words text-xs font-semibold text-ink">
+        Private access for {company}
+      </p>
       <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted">
         Access remaining
       </p>
