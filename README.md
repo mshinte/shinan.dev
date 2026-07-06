@@ -47,7 +47,7 @@ npm run cv:invite -- "Company Name" 7
 ```
 
 `cv:invite` creates a signed CV invitation link that remains valid for the
-specified number of days. Opening it creates a one-hour secure viewing session.
+specified number of days. Opening it creates a 30-minute secure viewing session.
 
 ## Project Structure
 

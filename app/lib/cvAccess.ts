@@ -1,7 +1,7 @@
 import { createHmac, timingSafeEqual } from "crypto";
 
 export const CV_SESSION_COOKIE = "cv_session";
-export const CV_SESSION_SECONDS = 60 * 60;
+export const CV_SESSION_SECONDS = 30 * 60;
 
 type CvTokenPurpose = "invite" | "session";
 
