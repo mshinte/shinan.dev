@@ -3,6 +3,7 @@ import Link from "next/link";
 import { cookies } from "next/headers";
 import CvSessionTimer from "../components/cv/CvSessionTimer";
 import CvTabs, { type CvReference } from "../components/cv/CvTabs";
+import CvWatermark from "../components/cv/CvWatermark";
 import { CV_SESSION_COOKIE, verifyCvToken } from "../lib/cvAccess";
 
 export const dynamic = "force-dynamic";
@@ -98,8 +99,9 @@ export default async function CvPage({ searchParams }: CvPageProps) {
   }
 
   return (
-    <article className="relative z-10 py-10 lg:py-14">
-      <div className="mx-auto w-[min(1000px,90vw)]">
+    <article className="relative py-10 lg:py-14">
+      <CvWatermark company={session.company} />
+      <div className="relative z-10 mx-auto w-[min(1000px,90vw)]">
         <header>
           {/* <p className="text-sm font-semibold uppercase tracking-[0.18em] text-muted">
             Private CV
