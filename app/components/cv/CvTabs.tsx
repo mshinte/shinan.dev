@@ -7,7 +7,8 @@ const tabs = [
   { id: "work", label: "Work Experience" },
   { id: "skills", label: "Technical Skills" },
   { id: "leadership", label: "Leadership & Service" },
-  { id: "interests", label: "Interests" }
+  { id: "interests", label: "Interests" },
+  { id: "references", label: "References" }
 ] as const;
 
 type TabId = (typeof tabs)[number]["id"];
@@ -101,7 +102,19 @@ const leadershipExperience = [
 
 const interests = ["Diving", "Snorkeling", "Running", "Paragliding", "Fishing"];
 
-export default function CvTabs() {
+export type CvReference = {
+  name: string;
+  organisation: string;
+  position: string;
+  phone: string;
+  email: string;
+};
+
+type CvTabsProps = {
+  references: CvReference[];
+};
+
+export default function CvTabs({ references }: CvTabsProps) {
   const [activeTab, setActiveTab] = useState<TabId>("work");
   const [canScrollRight, setCanScrollRight] = useState(false);
   const tabListRef = useRef<HTMLDivElement>(null);
@@ -310,16 +323,36 @@ export default function CvTabs() {
             </article>
           </div>
         ) : null}
-      </section>
 
-      <aside className="border-t border-black/10 py-6">
-        <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">
-          References
-        </h2>
-        <p className="mt-2 text-sm text-muted">
-          Professional references are available upon request.
-        </p>
-      </aside>
+        {activeTab === "references" ? (
+          references.length > 0 ? (
+            <div className="grid gap-7 md:grid-cols-3">
+              {references.map((reference) => (
+                <article
+                  className="border-l-2 border-black/10 pl-4"
+                  key={`${reference.name}-${reference.email}`}
+                >
+                  <h2 className="font-display text-xl">{reference.name}</h2>
+                  <p className="mt-2 text-sm font-semibold">{reference.position}</p>
+                  <p className="mt-1 text-sm text-muted">{reference.organisation}</p>
+                  <div className="mt-4 grid gap-2 text-sm">
+                    <a className="break-all hover:text-accent3" href={`tel:${reference.phone}`}>
+                      {reference.phone}
+                    </a>
+                    <a className="break-all hover:text-accent3" href={`mailto:${reference.email}`}>
+                      {reference.email}
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p className="border-l-2 border-black/15 pl-4 text-muted">
+              Reference details are not configured.
+            </p>
+          )
+        ) : null}
+      </section>
     </div>
   );
 }

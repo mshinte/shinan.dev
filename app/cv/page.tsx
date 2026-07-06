@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { cookies } from "next/headers";
 import CvSessionTimer from "../components/cv/CvSessionTimer";
-import CvTabs from "../components/cv/CvTabs";
+import CvTabs, { type CvReference } from "../components/cv/CvTabs";
 import { CV_SESSION_COOKIE, verifyCvToken } from "../lib/cvAccess";
 
 export const dynamic = "force-dynamic";
@@ -19,6 +19,40 @@ export const metadata: Metadata = {
 type CvPageProps = {
   searchParams: Promise<{ error?: string }>;
 };
+
+function getCvReferences(): CvReference[] {
+  const value = process.env.CV_REFERENCES_JSON;
+
+  if (!value) {
+    return [];
+  }
+
+  try {
+    const references = JSON.parse(value) as unknown;
+
+    if (!Array.isArray(references)) {
+      return [];
+    }
+
+    return references.filter(
+      (reference): reference is CvReference =>
+        typeof reference === "object" &&
+        reference !== null &&
+        "name" in reference &&
+        typeof reference.name === "string" &&
+        "organisation" in reference &&
+        typeof reference.organisation === "string" &&
+        "position" in reference &&
+        typeof reference.position === "string" &&
+        "phone" in reference &&
+        typeof reference.phone === "string" &&
+        "email" in reference &&
+        typeof reference.email === "string"
+    );
+  } catch {
+    return [];
+  }
+}
 
 export default async function CvPage({ searchParams }: CvPageProps) {
   const secret = process.env.CV_ACCESS_SECRET;
@@ -89,7 +123,7 @@ export default async function CvPage({ searchParams }: CvPageProps) {
             {/* <span className="text-muted">Maldives</span> */}
           </div>
         </header>
-        <CvTabs />
+        <CvTabs references={getCvReferences()} />
       </div>
     </article>
   );
