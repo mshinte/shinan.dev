@@ -50,7 +50,7 @@ export const projects = [
     scope: ["Event creation", "Realtime communication", "QR ticketing"]
   },
   {
-    category: "SAAD Assignment",
+    category: "System Analysis and Design - Assignment",
     title: "Travel Safe Int (TSI)",
     description:
       "A travel booking platform concept designed for a System Analysis and Design module, focused on planning the system flow, user journeys, and booking experience.",
@@ -71,12 +71,12 @@ export const projects = [
     ]
   },
   {
-    category: "HCI Assignment",
+    category: "Human Computer Interaction - Assignment",
     title: "Chill Space",
     description:
       "A mobile wellness app concept designed for a Human Computer Interaction module, focused on matching system design decisions to a target market through mood check-ins, anonymous community posting, quick relief activities, and a personalisable profile.",
     role: "Target-user research, mobile UX flow, and interface design",
-    stack: ["Mobile UX", "Figma", "HCI", "Wellness App", "User Research"],
+    stack: ["Mobile UX", "Figma", "Wellness App", "User Research"],
     type: "Academic Mobile App Design",
     year: "2025",
     discipline: "design",
@@ -110,6 +110,36 @@ export const projects = [
       "/projects/wellness/Profile 1.jpg",
       "/projects/wellness/Profile 1.2.jpg",
       "/projects/wellness/Profile 1.4.jpg"
+    ]
+  },
+  {
+    category: "Venture Building - Assignment",
+    title: "ByteBites",
+    description:
+      "A mobile food ordering venture concept created for a Venture Building module, focused on evaluating an entrepreneurial idea, designing the app experience, planning revenue opportunities, and shaping the pitch around a viable business model.",
+    role: "Venture concept, mobile UX flow, revenue planning, and pitch design",
+    stack: ["Mobile UX", "Figma", "Business Model", "Food Tech"],
+    type: "Academic Venture App Design",
+    year: "2025",
+    discipline: "design",
+    imageLayout: "mobile",
+    scope: [
+      "Meal plans",
+      "Instant ordering",
+      "Subscription flow",
+      "Delivery tracking",
+      "Revenue model",
+      "Pitch concept"
+    ],
+    images: [
+      "/projects/ByteBites/Welcome Page.jpg",
+      "/projects/ByteBites/Login Page.jpg",
+      "/projects/ByteBites/Register Page.jpg",
+      "/projects/ByteBites/Dashboard Page.jpg",
+      "/projects/ByteBites/Instant Order Page.jpg",
+      "/projects/ByteBites/Meal Plan Page.jpg",
+      "/projects/ByteBites/Subscription Page.jpg",
+      "/projects/ByteBites/Delivery Page.jpg"
     ]
   }
 ] satisfies Project[];
