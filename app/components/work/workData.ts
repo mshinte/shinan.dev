@@ -11,6 +11,7 @@ export type Project = {
   discipline: WorkFilter;
   images?: string[];
   imageLayout?: "wide" | "mobile";
+  imageTheme?: "wellness" | "food";
   scope?: string[];
 };
 
@@ -81,6 +82,7 @@ export const projects = [
     year: "2025",
     discipline: "design",
     imageLayout: "mobile",
+    imageTheme: "wellness",
     scope: [
       "Mood check-in",
       "Anonymous community",
@@ -116,13 +118,14 @@ export const projects = [
     category: "Venture Building - Assignment",
     title: "ByteBites",
     description:
-      "A mobile food ordering venture concept created for a Venture Building module, focused on evaluating an entrepreneurial idea, designing the app experience, planning revenue opportunities, and shaping the pitch around a viable business model.",
+      "A mobile food ordering venture concept created for a Venture Building module, focused on evaluating an entrepreneurial idea of home cooked meals, designing the app experience, planning revenue opportunities, and shaping the pitch around a viable business model.",
     role: "Venture concept, mobile UX flow, revenue planning, and pitch design",
     stack: ["Mobile UX", "Figma", "Business Model", "Food Tech"],
     type: "Academic Venture App Design",
     year: "2025",
     discipline: "design",
     imageLayout: "mobile",
+    imageTheme: "food",
     scope: [
       "Meal plans",
       "Instant ordering",

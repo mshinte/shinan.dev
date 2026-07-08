@@ -20,6 +20,10 @@ export default function DesignProjectCard({
   const placeholder = designPlaceholders[activeImage % designPlaceholders.length];
   const currentImage = project.images?.[activeImage];
   const isMobileImage = project.imageLayout === "mobile";
+  const mobileBackgroundClass =
+    project.imageTheme === "food"
+      ? "bg-[radial-gradient(circle_at_50%_42%,rgba(255,143,78,0.2),transparent_34%),linear-gradient(135deg,rgba(255,246,238,0.96),rgba(255,235,218,0.7))]"
+      : "bg-[radial-gradient(circle_at_50%_42%,rgba(89,178,218,0.18),transparent_34%),linear-gradient(135deg,rgba(239,250,253,0.96),rgba(226,245,241,0.75))]";
   const previousImage =
     hasImages && project.images
       ? project.images[activeImage === 0 ? slideCount - 1 : activeImage - 1]
@@ -59,7 +63,7 @@ export default function DesignProjectCard({
           <div
             className={
               isMobileImage
-                ? "absolute inset-0 flex items-center justify-center bg-[linear-gradient(rgba(16,16,18,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(16,16,18,0.05)_1px,transparent_1px)] bg-[size:28px_28px] p-5"
+                ? `absolute inset-0 flex items-center justify-center p-5 ${mobileBackgroundClass}`
                 : "absolute inset-0"
             }
           >
