@@ -173,7 +173,7 @@ export const projects = [
 
 export const workFilters: Array<{ label: string; value: WorkFilter }> = [
   { label: "Development", value: "development" },
-  { label: "Design", value: "design" }
+  { label: "UI/UX Design", value: "design" }
 ];
 
 export const designPlaceholders = [
