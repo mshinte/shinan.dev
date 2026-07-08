@@ -30,13 +30,20 @@ export default function SectionWork() {
         />
 
         <div className="grid gap-5">
-          {activeFilter === "design" ? <DesignProjectCard /> : null}
           {visibleProjects.map((project, index) => (
-            <DevelopmentProjectCard
-              index={index}
-              key={project.title}
-              project={project}
-            />
+            project.discipline === "design" ? (
+              <DesignProjectCard
+                index={index}
+                key={project.title}
+                project={project}
+              />
+            ) : (
+              <DevelopmentProjectCard
+                index={index}
+                key={project.title}
+                project={project}
+              />
+            )
           ))}
         </div>
       </div>

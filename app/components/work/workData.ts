@@ -33,6 +33,28 @@ export const projects = [
     type: "Web App",
     year: "2025",
     discipline: "development"
+  },
+  {
+    category: "UI/UX Design",
+    title: "Community Centric Events Management System",
+    description:
+      "A community-centric event management system for local organisers, with event creation, real-time communication, and secure QR ticketing.",
+    role: "Product flow, wireframes, and interface design",
+    stack: ["Figma", "Wireframes", "UI Design"],
+    type: "Design Project",
+    year: "2025",
+    discipline: "design"
+  },
+  {
+    category: "SAAD Assignment",
+    title: "Travel Safe Int (TSI)",
+    description:
+      "A travel booking platform concept designed for a System Analysis and Design module, focused on planning the system flow, user journeys, and booking experience.",
+    role: "System analysis, user flow, and interface planning",
+    stack: ["System Design", "Figma", "Travel Booking"],
+    type: "Academic Design Project",
+    year: "2025",
+    discipline: "design"
   }
 ] satisfies Project[];
 

@@ -1,9 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { designPlaceholders } from "./workData";
+import type { CSSProperties } from "react";
+import { designPlaceholders, type Project } from "./workData";
 
-export default function DesignProjectCard() {
+type DesignProjectCardProps = {
+  project: Project;
+  index: number;
+};
+
+export default function DesignProjectCard({
+  project,
+  index
+}: DesignProjectCardProps) {
   const [activeImage, setActiveImage] = useState(0);
   const placeholder = designPlaceholders[activeImage];
 
@@ -20,7 +29,10 @@ export default function DesignProjectCard() {
   }
 
   return (
-    <article className="grid gap-5 overflow-hidden rounded-[18px] border border-black/10 bg-card p-5 sm:grid-cols-[minmax(0,1.55fr)_minmax(220px,0.45fr)] sm:p-6">
+    <article
+      className="grid gap-5 overflow-hidden rounded-[18px] border border-black/10 bg-card p-5 opacity-0 translate-y-4 animate-reveal sm:grid-cols-[minmax(0,1.55fr)_minmax(220px,0.45fr)] sm:p-6 [animation-delay:var(--delay,0s)]"
+      style={{ "--delay": `${index * 0.1}s` } as CSSProperties}
+    >
       <div className="relative min-h-[300px] overflow-hidden rounded-[14px] border border-black/10 bg-base">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(16,16,18,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(16,16,18,0.06)_1px,transparent_1px)] bg-[size:28px_28px]" />
         <div className="absolute inset-x-12 inset-y-6 rounded-[12px] border border-black/10 bg-white/80 shadow-soft">
@@ -55,18 +67,17 @@ export default function DesignProjectCard() {
       <div className="flex flex-col justify-between gap-5">
         <div>
           <div className="mb-3 flex flex-wrap items-center gap-2">
-            <span className="text-xs uppercase tracking-[0.2em] text-muted">UI/UX Design</span>
+            <span className="text-xs uppercase tracking-[0.2em] text-muted">
+              {project.category}
+            </span>
           </div>
           <h3 className="font-display text-[1.2rem] sm:text-[1.3rem]">
-            community Centric Events Management System
+            {project.title}
           </h3>
-          <p className="mt-3 text-muted">
-            A community-centric event management system for local organisers, with
-            event creation, real-time communication, and secure QR ticketing.
-          </p>
+          <p className="mt-3 text-muted">{project.description}</p>
         </div>
         <div className="flex flex-wrap gap-2">
-          {["Figma", "Wireframes", "UI Design"].map((item) => (
+          {project.stack.map((item) => (
             <span
               className="rounded-full border border-black/10 bg-white/70 px-3 py-1.5 text-xs font-semibold text-muted"
               key={item}
