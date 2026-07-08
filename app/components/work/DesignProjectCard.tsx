@@ -37,11 +37,15 @@ export default function DesignProjectCard({
       className="grid gap-5 overflow-hidden rounded-[18px] border border-black/10 bg-card p-5 opacity-0 translate-y-4 animate-reveal sm:grid-cols-[minmax(0,1.55fr)_minmax(220px,0.45fr)] sm:p-6 [animation-delay:var(--delay,0s)]"
       style={{ "--delay": `${index * 0.1}s` } as CSSProperties}
     >
-      <div className="relative min-h-[300px] overflow-hidden rounded-[14px] border border-black/10 bg-base">
+      <div
+        className={`relative overflow-hidden rounded-[14px] border border-black/10 bg-base ${
+          hasImages ? "aspect-[1440/1024]" : "min-h-[300px]"
+        }`}
+      >
         {hasImages && currentImage ? (
           <Image
             alt={`${project.title} screen ${activeImage + 1}`}
-            className="object-contain p-3"
+            className="object-contain"
             fill
             priority={index === 0}
             sizes="(min-width: 640px) 60vw, 90vw"
