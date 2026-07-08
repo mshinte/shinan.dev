@@ -144,6 +144,30 @@ export const projects = [
       "/projects/ByteBites/Subscription Page.jpg",
       "/projects/ByteBites/Delivery Page.jpg"
     ]
+  },
+  {
+    category: "Project Management - Assignment",
+    title: "CRL+You",
+    description:
+      "A project management module concept focused on planning a realistic IT project by combining project phases, tools, techniques, and human factors into a structured delivery approach.",
+    role: "Project planning, interface flow, and delivery documentation",
+    stack: ["Project Planning", "Figma", "Workflow Design"],
+    type: "Academic Project Management Design",
+    year: "2025",
+    discipline: "design",
+    imageLayout: "wide",
+    scope: [
+      "Project phases",
+      "Team coordination",
+      "Delivery workflow",
+      "Stakeholder flow"
+    ],
+    images: [
+      "/projects/crl+you/Login.jpg",
+      "/projects/crl+you/Register.jpg",
+      "/projects/crl+you/Join Us.jpg",
+      "/projects/crl+you/Dashboard.jpg"
+    ]
   }
 ] satisfies Project[];
 
