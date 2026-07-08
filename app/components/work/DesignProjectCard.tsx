@@ -87,7 +87,7 @@ export default function DesignProjectCard({
           <span aria-hidden="true">›</span>
         </button>
       </div>
-      <div className="flex flex-col justify-between gap-5">
+      <div className="flex flex-col gap-5">
         <div>
           <div className="mb-3 flex flex-wrap items-center gap-2">
             <span className="text-xs uppercase tracking-[0.2em] text-muted">
