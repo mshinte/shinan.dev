@@ -19,6 +19,15 @@ export default function DesignProjectCard({
   const slideCount = hasImages ? project.images!.length : designPlaceholders.length;
   const placeholder = designPlaceholders[activeImage % designPlaceholders.length];
   const currentImage = project.images?.[activeImage];
+  const isMobileImage = project.imageLayout === "mobile";
+  const previousImage =
+    hasImages && project.images
+      ? project.images[activeImage === 0 ? slideCount - 1 : activeImage - 1]
+      : null;
+  const nextImage =
+    hasImages && project.images
+      ? project.images[activeImage === slideCount - 1 ? 0 : activeImage + 1]
+      : null;
 
   function showPreviousImage() {
     setActiveImage((current) =>
@@ -34,25 +43,68 @@ export default function DesignProjectCard({
 
   return (
     <article
-      className={`grid gap-5 overflow-hidden rounded-[18px] border border-black/10 bg-card p-5 opacity-0 translate-y-4 animate-reveal sm:p-6 [animation-delay:var(--delay,0s)] ${
-        hasImages ? "" : "sm:grid-cols-[minmax(0,1.55fr)_minmax(220px,0.45fr)]"
-      }`}
+      className="grid gap-5 overflow-hidden rounded-[18px] border border-black/10 bg-card p-5 opacity-0 translate-y-4 animate-reveal sm:grid-cols-[minmax(0,1.55fr)_minmax(220px,0.45fr)] sm:p-6 [animation-delay:var(--delay,0s)]"
       style={{ "--delay": `${index * 0.1}s` } as CSSProperties}
     >
       <div
         className={`relative overflow-hidden rounded-[14px] border border-black/10 bg-base ${
-          hasImages ? "aspect-[16/10] max-h-[620px]" : "min-h-[300px]"
+          hasImages
+            ? isMobileImage
+              ? "min-h-[640px]"
+              : "aspect-[1440/1024]"
+            : "min-h-[300px]"
         }`}
       >
         {hasImages && currentImage ? (
-          <Image
-            alt={`${project.title} screen ${activeImage + 1}`}
-            className="object-contain"
-            fill
-            priority={index === 0}
-            sizes="(min-width: 640px) 60vw, 90vw"
-            src={currentImage}
-          />
+          <div
+            className={
+              isMobileImage
+                ? "absolute inset-0 flex items-center justify-center bg-[linear-gradient(rgba(16,16,18,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(16,16,18,0.05)_1px,transparent_1px)] bg-[size:28px_28px] p-5"
+                : "absolute inset-0"
+            }
+          >
+            {isMobileImage ? (
+              <div className="flex items-center justify-center gap-4 sm:gap-6">
+                {previousImage ? (
+                  <div className="relative hidden h-[500px] w-[230px] overflow-hidden rounded-[28px] border border-black/10 bg-white opacity-70 shadow-soft lg:block">
+                    <Image
+                      alt={`${project.title} previous screen`}
+                      className="object-contain"
+                      fill
+                      sizes="180px"
+                      src={previousImage}
+                    />
+                  </div>
+                ) : null}
+                <div className="h-[580px] w-[267px] overflow-y-auto overflow-x-hidden rounded-[32px] border border-black/10 bg-white shadow-soft [scrollbar-width:thin]">
+                  <img
+                    alt={`${project.title} screen ${activeImage + 1}`}
+                    className="h-auto w-full"
+                    src={currentImage}
+                  />
+                </div>
+                {nextImage ? (
+                  <div className="relative hidden h-[500px] w-[230px] overflow-hidden rounded-[28px] border border-black/10 bg-white opacity-70 shadow-soft lg:block">
+                    <Image
+                      alt={`${project.title} next screen`}
+                      className="object-contain"
+                      fill
+                      sizes="180px"
+                      src={nextImage}
+                    />
+                  </div>
+                ) : null}
+              </div>
+            ) : (
+              <div className="h-full w-full overflow-y-auto overflow-x-hidden [scrollbar-width:thin]">
+                <img
+                  alt={`${project.title} screen ${activeImage + 1}`}
+                  className="h-auto w-full"
+                  src={currentImage}
+                />
+              </div>
+            )}
+          </div>
         ) : (
           <>
             <div className="absolute inset-0 bg-[linear-gradient(rgba(16,16,18,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(16,16,18,0.06)_1px,transparent_1px)] bg-[size:28px_28px]" />
@@ -89,11 +141,7 @@ export default function DesignProjectCard({
           <span aria-hidden="true">›</span>
         </button>
       </div>
-      <div
-        className={`flex flex-col gap-5 ${
-          hasImages ? "sm:flex-row sm:items-end sm:justify-between" : ""
-        }`}
-      >
+      <div className="flex flex-col justify-between gap-5">
         <div>
           <div className="mb-3 flex flex-wrap items-center gap-2">
             <span className="text-xs uppercase tracking-[0.2em] text-muted">
@@ -103,9 +151,24 @@ export default function DesignProjectCard({
           <h3 className="font-display text-[1.2rem] sm:text-[1.3rem]">
             {project.title}
           </h3>
-          <p className="mt-3 max-w-3xl text-muted">{project.description}</p>
+          <p className="mt-3 text-muted">{project.description}</p>
+          {project.scope ? (
+            <div className="mt-5 rounded-[14px] bg-base/70 p-4 text-sm">
+              <span className="block font-semibold text-ink">Design Scope</span>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {project.scope.map((item) => (
+                  <span
+                    className="rounded-full bg-white/70 px-3 py-1.5 text-xs font-semibold text-muted"
+                    key={item}
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ) : null}
         </div>
-        <div className="flex shrink-0 flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2">
           {project.stack.map((item) => (
             <span
               className="rounded-full border border-black/10 bg-white/70 px-3 py-1.5 text-xs font-semibold text-muted"

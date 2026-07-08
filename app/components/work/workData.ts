@@ -10,6 +10,8 @@ export type Project = {
   year: string;
   discipline: WorkFilter;
   images?: string[];
+  imageLayout?: "wide" | "mobile";
+  scope?: string[];
 };
 
 export const projects = [
@@ -36,7 +38,7 @@ export const projects = [
     discipline: "development"
   },
   {
-    category: "UI/UX Design",
+    category: "Final Year Project",
     title: "Community Centric Events Management System",
     description:
       "A community-centric event management system for local organisers, with event creation, real-time communication, and secure QR ticketing.",
@@ -44,7 +46,8 @@ export const projects = [
     stack: ["Figma", "Wireframes", "UI Design"],
     type: "Design Project",
     year: "2025",
-    discipline: "design"
+    discipline: "design",
+    scope: ["Event creation", "Realtime communication", "QR ticketing"]
   },
   {
     category: "SAAD Assignment",
@@ -52,10 +55,12 @@ export const projects = [
     description:
       "A travel booking platform concept designed for a System Analysis and Design module, focused on planning the system flow, user journeys, and booking experience.",
     role: "System analysis, user flow, and interface planning",
-    stack: ["System Design", "Figma", "Travel Booking"],
+    stack: ["System Design", "Figma", "Travel Booking", "User Flow", "Booking UX"],
     type: "Academic Design Project",
     year: "2025",
     discipline: "design",
+    imageLayout: "wide",
+    scope: ["Booking flow", "Passenger details", "Payment screen", "Itinerary view"],
     images: [
       "/projects/tsi/TSI Home Page.jpg",
       "/projects/tsi/TSI Page -2 (DEP Flight).jpg",
@@ -63,6 +68,48 @@ export const projects = [
       "/projects/tsi/TSI Page -4 (Passenger Details).jpg",
       "/projects/tsi/TSI Page-5 (Payment).jpg",
       "/projects/tsi/TSI Page-6 Itenary.jpg"
+    ]
+  },
+  {
+    category: "HCI Assignment",
+    title: "Chill Space",
+    description:
+      "A mobile wellness app concept designed for a Human Computer Interaction module, focused on matching system design decisions to a target market through mood check-ins, anonymous community posting, quick relief activities, and a personalisable profile.",
+    role: "Target-user research, mobile UX flow, and interface design",
+    stack: ["Mobile UX", "Figma", "HCI", "Wellness App", "User Research"],
+    type: "Academic Mobile App Design",
+    year: "2025",
+    discipline: "design",
+    imageLayout: "mobile",
+    scope: [
+      "Mood check-in",
+      "Anonymous community",
+      "Quick relief activities",
+      "Personalised profile",
+      "Wellness tracker",
+      "Target market fit"
+    ],
+    images: [
+      "/projects/wellness/Landing Page.jpg",
+      "/projects/wellness/Intro Page 1.jpg",
+      "/projects/wellness/Intro Page 2.jpg",
+      "/projects/wellness/Intro Page 3.jpg",
+      "/projects/wellness/Sign In.jpg",
+      "/projects/wellness/Sign Up.jpg",
+      "/projects/wellness/Dashboard.jpg",
+      "/projects/wellness/Mood 1.jpg",
+      "/projects/wellness/Mood 2.jpg",
+      "/projects/wellness/Mood 3.jpg",
+      "/projects/wellness/Community 1.jpg",
+      "/projects/wellness/Community 1.2.jpg",
+      "/projects/wellness/Relief 1.jpg",
+      "/projects/wellness/Relief 1.1.jpg",
+      "/projects/wellness/Relief 1.2.jpg",
+      "/projects/wellness/Wellness Tracker 1.jpg",
+      "/projects/wellness/Wellness Tracker 1.2.1.jpg",
+      "/projects/wellness/Profile 1.jpg",
+      "/projects/wellness/Profile 1.2.jpg",
+      "/projects/wellness/Profile 1.4.jpg"
     ]
   }
 ] satisfies Project[];
