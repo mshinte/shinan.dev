@@ -9,6 +9,7 @@ export type Project = {
   type: string;
   year: string;
   discipline: WorkFilter;
+  images?: string[];
 };
 
 export const projects = [
@@ -54,7 +55,15 @@ export const projects = [
     stack: ["System Design", "Figma", "Travel Booking"],
     type: "Academic Design Project",
     year: "2025",
-    discipline: "design"
+    discipline: "design",
+    images: [
+      "/projects/tsi/TSI Home Page.jpg",
+      "/projects/tsi/TSI Page -2 (DEP Flight).jpg",
+      "/projects/tsi/TSI Page -3 (RET Flight).jpg",
+      "/projects/tsi/TSI Page -4 (Passenger Details).jpg",
+      "/projects/tsi/TSI Page-5 (Payment).jpg",
+      "/projects/tsi/TSI Page-6 Itenary.jpg"
+    ]
   }
 ] satisfies Project[];
 
