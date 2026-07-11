@@ -42,8 +42,8 @@ export default function DevelopmentProjectCard({
       className="grid min-h-[240px] gap-5 overflow-hidden rounded-[18px] border border-black/10 bg-card p-5 opacity-0 translate-y-4 animate-reveal sm:p-6 [animation-delay:var(--delay,0s)]"
       style={{ "--delay": `${index * 0.1}s` } as CSSProperties}
     >
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-        <div>
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0">
           <div className="text-xs uppercase tracking-[0.2em] text-muted">
             {project.category}
           </div>
@@ -51,9 +51,17 @@ export default function DevelopmentProjectCard({
             {project.title}
           </h3>
         </div>
-        <span className="w-fit rounded-full bg-accent3 px-3 py-1 text-sm font-semibold text-ink">
-          {project.year}
-        </span>
+        <div className="flex h-[72px] w-[72px] shrink-0 items-center justify-center overflow-hidden rounded-full border border-black/10 bg-white/70 text-[9px] font-semibold uppercase tracking-[0.12em] text-muted">
+          {project.logo ? (
+            <img
+              alt={`${project.title} logo`}
+              className="h-full w-full object-contain p-1"
+              src={project.logo}
+            />
+          ) : (
+            "Logo"
+          )}
+        </div>
       </div>
       <p className="max-w-3xl text-muted">{project.description}</p>
       <div className="grid gap-2 rounded-[14px] bg-base/70 p-4 text-sm sm:grid-cols-[140px,1fr]">

@@ -50,16 +50,29 @@ export default function DesignProjectCard({
       className="grid gap-5 overflow-hidden rounded-[18px] border border-black/10 bg-card p-5 opacity-0 translate-y-4 animate-reveal sm:p-6 [animation-delay:var(--delay,0s)]"
       style={{ "--delay": `${index * 0.1}s` } as CSSProperties}
     >
-      <div>
-        <div className="mb-3 flex flex-wrap items-center gap-2">
-          <span className="text-xs uppercase tracking-[0.2em] text-muted">
-            {project.category}
-          </span>
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0">
+          <div className="mb-3 flex flex-wrap items-center gap-2">
+            <span className="text-xs uppercase tracking-[0.2em] text-muted">
+              {project.category}
+            </span>
+          </div>
+          <h3 className="font-display text-[1.2rem] sm:text-[1.3rem]">
+            {project.title}
+          </h3>
+          <p className="mt-3 max-w-3xl text-muted">{project.description}</p>
         </div>
-        <h3 className="font-display text-[1.2rem] sm:text-[1.3rem]">
-          {project.title}
-        </h3>
-        <p className="mt-3 max-w-3xl text-muted">{project.description}</p>
+        <div className="flex h-[72px] w-[72px] shrink-0 items-center justify-center overflow-hidden rounded-full border border-black/10 bg-white/70 text-[9px] font-semibold uppercase tracking-[0.12em] text-muted">
+          {project.logo ? (
+            <img
+              alt={`${project.title} logo`}
+              className="h-full w-full object-contain p-1"
+              src={project.logo}
+            />
+          ) : (
+            "Logo"
+          )}
+        </div>
       </div>
       <div
         className={`relative overflow-hidden rounded-[14px] border border-black/10 bg-base ${

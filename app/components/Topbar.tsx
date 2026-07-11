@@ -4,9 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { href: "/experience", label: "Experience" },
-  { href: "/contact", label: "Contact" },
-  { href: "/cv", label: "CV", protected: true }
+  { href: "/experience", label: "Projects" },
+  { href: "/contact", label: "Contact" }
+  // { href: "/cv", label: "CV", protected: true }
 ];
 
 export default function Topbar() {
@@ -34,8 +34,6 @@ export default function Topbar() {
                 className={`rounded-full px-3 py-1.5 transition-colors duration-200 ${
                   isActive
                     ? "bg-ink text-white"
-                    : item.protected
-                      ? "border border-black/15 bg-white/60 text-ink hover:bg-white"
                     : "text-ink hover:bg-white/70 hover:text-accent3"
                 }`}
                 href={item.href}

@@ -9,6 +9,7 @@ export type Project = {
   type: string;
   year: string;
   discipline: WorkFilter;
+  logo?: string;
   images?: string[];
   imageLayout?: "wide" | "mobile";
   imageAspect?: "standard" | "ccems";
@@ -27,6 +28,7 @@ export const projects = [
     type: "Progressive Web App",
     year: "2026",
     discipline: "development",
+    logo: "/logo/APU.svg",
     imageLayout: "wide",
     imageAspect: "ccems",
     images: [
@@ -46,6 +48,7 @@ export const projects = [
     type: "Web App",
     year: "2025",
     discipline: "development",
+    logo: "/logo/pinetworks.svg",
     imageLayout: "wide",
     images: [
       "/projects/asset tracking/Login Page.jpg",
@@ -63,6 +66,7 @@ export const projects = [
     type: "Academic Design Project",
     year: "2025",
     discipline: "design",
+    logo: "/logo/APU.svg",
     imageLayout: "wide",
     scope: ["Booking flow", "Passenger details", "Payment screen", "Itinerary view"],
     images: [
@@ -84,6 +88,7 @@ export const projects = [
     type: "Academic Mobile App Design",
     year: "2025",
     discipline: "design",
+    logo: "/logo/APU.svg",
     imageLayout: "mobile",
     imageTheme: "wellness",
     scope: [
@@ -127,6 +132,7 @@ export const projects = [
     type: "Academic Venture App Design",
     year: "2025",
     discipline: "design",
+    logo: "/logo/APU.svg",
     imageLayout: "mobile",
     imageTheme: "food",
     scope: [
@@ -158,6 +164,7 @@ export const projects = [
     type: "Academic Project Management Design",
     year: "2025",
     discipline: "design",
+    logo: "/logo/APU.svg",
     imageLayout: "wide",
     scope: [
       "Project phases",
