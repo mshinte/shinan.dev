@@ -15,6 +15,7 @@ export default function DesignProjectCard({
   index
 }: DesignProjectCardProps) {
   const [activeImage, setActiveImage] = useState(0);
+  const [isDesignOpen, setIsDesignOpen] = useState(false);
   const hasImages = Boolean(project.images?.length);
   const slideCount = hasImages ? project.images!.length : designPlaceholders.length;
   const placeholder = designPlaceholders[activeImage % designPlaceholders.length];
@@ -52,15 +53,23 @@ export default function DesignProjectCard({
     >
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div className="min-w-0">
-          <div className="mb-3 flex flex-wrap items-center gap-2">
-            <span className="text-xs uppercase tracking-[0.2em] text-muted">
-              {project.category}
-            </span>
-          </div>
           <h3 className="font-display text-[1.2rem] sm:text-[1.3rem]">
             {project.title}
           </h3>
+          <div className="mt-2 text-sm font-bold text-muted">
+            {project.category}
+          </div>
           <p className="mt-3 max-w-3xl text-muted">{project.description}</p>
+          <div className="mt-5 flex flex-wrap text-sm">
+            <button
+              aria-expanded={isDesignOpen}
+              className="font-semibold text-accent3 hover:text-ink"
+              onClick={() => setIsDesignOpen((current) => !current)}
+              type="button"
+            >
+              {isDesignOpen ? "Hide design" : "View design"}
+            </button>
+          </div>
         </div>
         <div className="flex h-[72px] w-[72px] shrink-0 items-center justify-center overflow-hidden rounded-full border border-black/10 bg-white/70 text-[9px] font-semibold uppercase tracking-[0.12em] text-muted">
           {project.logo ? (
@@ -74,101 +83,103 @@ export default function DesignProjectCard({
           )}
         </div>
       </div>
-      <div
-        className={`relative overflow-hidden rounded-[14px] border border-black/10 bg-base ${
-          hasImages
-            ? isMobileImage
-              ? "min-h-[640px]"
-              : "aspect-[1440/1024]"
-            : "min-h-[300px]"
-        }`}
-      >
-        {hasImages && currentImage ? (
-          <div
-            className={
-              isMobileImage
-                ? `absolute inset-0 flex items-center justify-center p-5 ${mobileBackgroundClass}`
-                : "absolute inset-0"
-            }
-          >
-            {isMobileImage ? (
-              <div className="flex items-center justify-center gap-4 sm:gap-6">
-                {previousImage ? (
-                  <div className="relative hidden h-[500px] w-[230px] overflow-hidden rounded-[28px] border border-black/10 bg-white opacity-70 shadow-soft lg:block">
-                    <Image
-                      alt={`${project.title} previous screen`}
-                      className="object-contain"
-                      fill
-                      sizes="180px"
-                      src={previousImage}
+      {isDesignOpen ? (
+        <div
+          className={`relative overflow-hidden rounded-[14px] border border-black/10 bg-base ${
+            hasImages
+              ? isMobileImage
+                ? "min-h-[640px]"
+                : "aspect-[1440/1024]"
+              : "min-h-[300px]"
+          }`}
+        >
+          {hasImages && currentImage ? (
+            <div
+              className={
+                isMobileImage
+                  ? `absolute inset-0 flex items-center justify-center p-5 ${mobileBackgroundClass}`
+                  : "absolute inset-0"
+              }
+            >
+              {isMobileImage ? (
+                <div className="flex items-center justify-center gap-4 sm:gap-6">
+                  {previousImage ? (
+                    <div className="relative hidden h-[500px] w-[230px] overflow-hidden rounded-[28px] border border-black/10 bg-white opacity-70 shadow-soft lg:block">
+                      <Image
+                        alt={`${project.title} previous screen`}
+                        className="object-contain"
+                        fill
+                        sizes="180px"
+                        src={previousImage}
+                      />
+                    </div>
+                  ) : null}
+                  <div className="h-[580px] w-[267px] overflow-y-auto overflow-x-hidden rounded-[32px] border border-black/10 bg-white shadow-soft [scrollbar-width:thin]">
+                    <img
+                      alt={`${project.title} screen ${activeImage + 1}`}
+                      className="h-auto w-full"
+                      src={currentImage}
                     />
                   </div>
-                ) : null}
-                <div className="h-[580px] w-[267px] overflow-y-auto overflow-x-hidden rounded-[32px] border border-black/10 bg-white shadow-soft [scrollbar-width:thin]">
+                  {nextImage ? (
+                    <div className="relative hidden h-[500px] w-[230px] overflow-hidden rounded-[28px] border border-black/10 bg-white opacity-70 shadow-soft lg:block">
+                      <Image
+                        alt={`${project.title} next screen`}
+                        className="object-contain"
+                        fill
+                        sizes="180px"
+                        src={nextImage}
+                      />
+                    </div>
+                  ) : null}
+                </div>
+              ) : (
+                <div className="h-full w-full overflow-y-auto overflow-x-hidden [scrollbar-width:thin]">
                   <img
                     alt={`${project.title} screen ${activeImage + 1}`}
                     className="h-auto w-full"
                     src={currentImage}
                   />
                 </div>
-                {nextImage ? (
-                  <div className="relative hidden h-[500px] w-[230px] overflow-hidden rounded-[28px] border border-black/10 bg-white opacity-70 shadow-soft lg:block">
-                    <Image
-                      alt={`${project.title} next screen`}
-                      className="object-contain"
-                      fill
-                      sizes="180px"
-                      src={nextImage}
-                    />
+              )}
+            </div>
+          ) : (
+            <>
+              <div className="absolute inset-0 bg-[linear-gradient(rgba(16,16,18,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(16,16,18,0.06)_1px,transparent_1px)] bg-[size:28px_28px]" />
+              <div className="absolute inset-x-12 inset-y-6 rounded-[12px] border border-black/10 bg-white/80 shadow-soft">
+                <div className="h-10 border-b border-black/10 bg-white/70" />
+                <div className="grid gap-3 p-4">
+                  <div
+                    className={`h-4 rounded-full bg-black/10 ${placeholder.titleWidth}`}
+                  />
+                  <div className={`h-24 rounded-[10px] ${placeholder.heroTone}`} />
+                  <div className="grid grid-cols-3 gap-2">
+                    {placeholder.tiles.map((tileClass, index) => (
+                      <div className={`h-10 rounded-[8px] ${tileClass}`} key={index} />
+                    ))}
                   </div>
-                ) : null}
-              </div>
-            ) : (
-              <div className="h-full w-full overflow-y-auto overflow-x-hidden [scrollbar-width:thin]">
-                <img
-                  alt={`${project.title} screen ${activeImage + 1}`}
-                  className="h-auto w-full"
-                  src={currentImage}
-                />
-              </div>
-            )}
-          </div>
-        ) : (
-          <>
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(16,16,18,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(16,16,18,0.06)_1px,transparent_1px)] bg-[size:28px_28px]" />
-            <div className="absolute inset-x-12 inset-y-6 rounded-[12px] border border-black/10 bg-white/80 shadow-soft">
-              <div className="h-10 border-b border-black/10 bg-white/70" />
-              <div className="grid gap-3 p-4">
-                <div
-                  className={`h-4 rounded-full bg-black/10 ${placeholder.titleWidth}`}
-                />
-                <div className={`h-24 rounded-[10px] ${placeholder.heroTone}`} />
-                <div className="grid grid-cols-3 gap-2">
-                  {placeholder.tiles.map((tileClass, index) => (
-                    <div className={`h-10 rounded-[8px] ${tileClass}`} key={index} />
-                  ))}
                 </div>
               </div>
-            </div>
-          </>
-        )}
-        <button
-          aria-label="Previous design image"
-          className="absolute left-3 top-1/2 inline-flex -translate-y-1/2 items-center justify-center px-2 text-3xl font-semibold leading-none text-ink transition-all duration-200 hover:-translate-x-0.5 hover:text-accent3 active:scale-95"
-          onClick={showPreviousImage}
-          type="button"
-        >
-          <span aria-hidden="true">‹</span>
-        </button>
-        <button
-          aria-label="Next design image"
-          className="absolute right-3 top-1/2 inline-flex -translate-y-1/2 items-center justify-center px-2 text-3xl font-semibold leading-none text-ink transition-all duration-200 hover:translate-x-0.5 hover:text-accent3 active:scale-95"
-          onClick={showNextImage}
-          type="button"
-        >
-          <span aria-hidden="true">›</span>
-        </button>
-      </div>
+            </>
+          )}
+          <button
+            aria-label="Previous design image"
+            className="absolute left-3 top-1/2 inline-flex -translate-y-1/2 items-center justify-center px-2 text-3xl font-semibold leading-none text-ink transition-all duration-200 hover:-translate-x-0.5 hover:text-accent3 active:scale-95"
+            onClick={showPreviousImage}
+            type="button"
+          >
+            <span aria-hidden="true">‹</span>
+          </button>
+          <button
+            aria-label="Next design image"
+            className="absolute right-3 top-1/2 inline-flex -translate-y-1/2 items-center justify-center px-2 text-3xl font-semibold leading-none text-ink transition-all duration-200 hover:translate-x-0.5 hover:text-accent3 active:scale-95"
+            onClick={showNextImage}
+            type="button"
+          >
+            <span aria-hidden="true">›</span>
+          </button>
+        </div>
+      ) : null}
     </article>
   );
 }
