@@ -22,7 +22,7 @@ export const projects = [
     category: "Final Year Project - 2026",
     title: "Community Centric Events Management System",
     description:
-      "A community-centric event management system for local organisers, with event creation, real-time communication, and secure QR ticketing.",
+      "A progressive web app for local organisers, with event creation, real-time communication, secure QR ticketing, and reporting. My work covered product design, frontend, backend, system flow, and documentation.",
     role: "Product design, frontend, backend, system flow and  documentation",
     stack: ["PWA", "QR ticketing", "Realtime UX"],
     type: "Progressive Web App",
@@ -42,7 +42,7 @@ export const projects = [
     category: "Internship - 2025",
     title: "Asset Management System",
     description:
-      "A digital asset management system built to streamline asset tracking, maintenance visibility, and department-level coordination.",
+      "A web app built to streamline asset tracking, maintenance visibility, and department-level coordination. My work covered product UI, workflow mapping, dashboard UX, and implementation support.",
     role: "Product UI, workflow mapping, and implementation support",
     stack: ["Web app", "Dashboard UX", "Asset tracking"],
     type: "Web App",

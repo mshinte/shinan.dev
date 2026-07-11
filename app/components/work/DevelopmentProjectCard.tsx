@@ -44,12 +44,12 @@ export default function DevelopmentProjectCard({
     >
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div className="min-w-0">
-          <div className="text-xs uppercase tracking-[0.2em] text-muted">
-            {project.category}
-          </div>
-          <h3 className="mt-2 break-words font-display text-[1.2rem] sm:text-[1.3rem]">
+          <h3 className="break-words font-display text-[1.2rem] sm:text-[1.3rem]">
             {project.title}
           </h3>
+          <div className="mt-2 text-sm font-bold text-muted">
+            {project.category}
+          </div>
         </div>
         <div className="flex h-[72px] w-[72px] shrink-0 items-center justify-center overflow-hidden rounded-full border border-black/10 bg-white/70 text-[9px] font-semibold uppercase tracking-[0.12em] text-muted">
           {project.logo ? (
@@ -64,25 +64,18 @@ export default function DevelopmentProjectCard({
         </div>
       </div>
       <p className="max-w-3xl text-muted">{project.description}</p>
-      <div className="grid gap-2 rounded-[14px] bg-base/70 p-4 text-sm sm:grid-cols-[140px,1fr]">
-        <span className="font-semibold text-ink">Role</span>
-        <span className="text-muted">{project.role}</span>
-      </div>
-      <div className="flex flex-col gap-1 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-        <span>{project.type}</span>
-        <div className="flex flex-wrap gap-4">
-          {hasImages ? (
-            <button
-              aria-expanded={isInterfaceOpen}
-              className="font-semibold text-accent3 hover:text-ink"
-              onClick={() => setIsInterfaceOpen((current) => !current)}
-              type="button"
-            >
-              {isInterfaceOpen ? "Hide interface" : "View interface"}
-            </button>
-          ) : null}
+      {hasImages ? (
+        <div className="flex flex-wrap text-sm">
+          <button
+            aria-expanded={isInterfaceOpen}
+            className="font-semibold text-accent3 hover:text-ink"
+            onClick={() => setIsInterfaceOpen((current) => !current)}
+            type="button"
+          >
+            {isInterfaceOpen ? "Hide interface" : "View interface"}
+          </button>
         </div>
-      </div>
+      ) : null}
       {hasImages && currentImage && isInterfaceOpen ? (
         <div
           className={`relative mx-auto w-full overflow-hidden rounded-[14px] border border-black/10 bg-base sm:w-[76%] ${imageAspectClass}`}
