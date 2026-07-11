@@ -9,7 +9,7 @@ export default function SectionHero() {
             Available for collabs
           </div>
           <h1 className="font-display text-[clamp(2.6rem,5vw,4.6rem)] leading-[1.05] tracking-[-0.03em]">
-            I turn ideas into fast, thoughtful websites.
+           I like turning ideas into thoughtful websites.
           </h1>
           <p className="max-w-xl text-[1.05rem] text-muted">
             I’m Shinan, a web developer focused on building practical, reliable
@@ -26,7 +26,7 @@ export default function SectionHero() {
               className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white/60 px-6 py-3 font-semibold text-ink transition-colors duration-200 hover:bg-white"
               href="/experience"
             >
-              View experience
+              View  my experience
             </Link>
           </div>
           {/* <div className="flex flex-wrap gap-4">
@@ -59,32 +59,32 @@ export default function SectionHero() {
           </div> */}
         </div>
         <div className="relative min-w-0">
-          <div className="hero-type-block relative overflow-hidden rounded-[28px] border border-black/10 bg-white/70 px-5 py-5 shadow-soft backdrop-blur-sm sm:rounded-[32px] sm:px-8 sm:py-7">
-            <div className="mb-4 grid gap-2">
-              <p className="justify-self-center text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-muted">
+          <div className="hero-type-block relative overflow-hidden rounded-[20px] border border-black/10 bg-white/70 px-4 py-4 shadow-soft backdrop-blur-sm sm:rounded-[32px] sm:px-8 sm:py-7">
+            <div className="mb-4 grid gap-2 sm:mb-5">
+              <p className="justify-self-center text-center text-[10px] font-semibold uppercase tracking-[0.22em] text-muted sm:text-[11px] sm:tracking-[0.28em]">
                 Direction
               </p>
               <div className="h-px bg-[linear-gradient(90deg,transparent,rgba(16,16,18,0.18),transparent)]" />
             </div>
             <div className="grid gap-3">
               <div className="hero-word-stack min-w-0 leading-none">
-                <span className="hero-word hero-word--solid block break-words font-display text-[clamp(2.8rem,8vw,5.2rem)] uppercase tracking-[-0.05em] text-ink">
+                <span className="hero-word hero-word--solid block break-words font-display text-[clamp(2.25rem,13vw,4rem)] uppercase tracking-normal text-ink sm:text-[clamp(2.8rem,8vw,5.2rem)]">
                   Build
                 </span>
-                <span className="hero-word hero-word--outline block break-words font-display text-[clamp(2.8rem,8vw,5.2rem)] uppercase tracking-[-0.05em] text-transparent [-webkit-text-stroke:1.5px_#101012]">
+                <span className="hero-word hero-word--outline block break-words font-display text-[clamp(2.25rem,13vw,4rem)] uppercase tracking-normal text-transparent [-webkit-text-stroke:1px_#101012] sm:text-[clamp(2.8rem,8vw,5.2rem)] sm:[-webkit-text-stroke:1.5px_#101012]">
                   Culture
                 </span>
-                <span className="hero-word hero-word--accent block break-words font-display text-[clamp(2.8rem,8vw,5.2rem)] uppercase tracking-[-0.05em] text-accent3">
+                <span className="hero-word hero-word--accent block break-words font-display text-[clamp(2.25rem,13vw,4rem)] uppercase tracking-normal text-accent3 sm:text-[clamp(2.8rem,8vw,5.2rem)]">
                   Motion
                 </span>
               </div>
-              <p className="max-w-sm text-sm text-muted sm:text-[0.95rem]">
+              <p className="max-w-sm text-[0.9rem] leading-6 text-muted sm:text-[0.95rem]">
                 Frontend systems shaped like campaigns: sharp hierarchy, clear
                 interaction, and just enough movement to feel alive.
               </p>
             </div>
-            <div className="hero-ribbon mt-8 overflow-hidden rounded-full border border-black/10 bg-base/70 py-2">
-              <div className="hero-ribbon__track flex min-w-max items-center gap-4 px-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-muted">
+            <div className="hero-ribbon mt-6 overflow-hidden rounded-full border border-black/10 bg-base/70 py-2 sm:mt-8">
+              <div className="hero-ribbon__track flex min-w-max items-center gap-3 px-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted sm:gap-4 sm:px-4 sm:text-[11px] sm:tracking-[0.24em]">
                 <span>Design systems</span>
                 <span className="h-1.5 w-1.5 rounded-full bg-accent3" />
                 <span>Product launches</span>

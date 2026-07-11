@@ -123,7 +123,7 @@ export default function ContactForm() {
         type="submit"
         disabled={isSubmitting}
       >
-        {isSubmitting ? "Sending..." : "Send brief"}
+        {isSubmitting ? "Sending..." : "Send"}
       </button>
     </form>
   );

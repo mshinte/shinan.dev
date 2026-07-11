@@ -113,6 +113,19 @@ body {
   .hero-word-stack {
     max-width: 100%;
   }
+
+  @keyframes hero-word-drift {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+    33% {
+      transform: translateX(3px) translateY(-2px);
+    }
+    66% {
+      transform: translateX(-3px) translateY(2px);
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
