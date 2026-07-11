@@ -11,6 +11,7 @@ export type Project = {
   discipline: WorkFilter;
   images?: string[];
   imageLayout?: "wide" | "mobile";
+  imageAspect?: "standard" | "ccems";
   imageTheme?: "wellness" | "food";
   scope?: string[];
 };
@@ -21,11 +22,19 @@ export const projects = [
     title: "Community Centric Events Management System",
     description:
       "A community-centric event management system for local organisers, with event creation, real-time communication, and secure QR ticketing.",
-    role: "Product design, frontend, and system flow",
+    role: "Product design, frontend, backend,system flow and  documentation",
     stack: ["PWA", "QR ticketing", "Realtime UX"],
     type: "Progressive Web App",
     year: "2025",
-    discipline: "development"
+    discipline: "development",
+    imageLayout: "wide",
+    imageAspect: "ccems",
+    images: [
+      "/projects/ccems/Login.jpg",
+      "/projects/ccems/Dashboard.jpg",
+      "/projects/ccems/Events.jpg",
+      "/projects/ccems/Reports.jpg"
+    ]
   },
   {
     category: "Internship - Product",
@@ -36,19 +45,13 @@ export const projects = [
     stack: ["Web app", "Dashboard UX", "Asset tracking"],
     type: "Web App",
     year: "2025",
-    discipline: "development"
-  },
-  {
-    category: "Final Year Project",
-    title: "Community Centric Events Management System",
-    description:
-      "A community-centric event management system for local organisers, with event creation, real-time communication, and secure QR ticketing.",
-    role: "Product flow, wireframes, and interface design",
-    stack: ["Figma", "Wireframes", "UI Design"],
-    type: "Design Project",
-    year: "2025",
-    discipline: "design",
-    scope: ["Event creation", "Realtime communication", "QR ticketing"]
+    discipline: "development",
+    imageLayout: "wide",
+    images: [
+      "/projects/asset tracking/Login Page.jpg",
+      "/projects/asset tracking/Dashboard Page.jpg",
+      "/projects/asset tracking/Asset List.jpg"
+    ]
   },
   {
     category: "System Analysis and Design - Assignment",
@@ -172,8 +175,8 @@ export const projects = [
 ] satisfies Project[];
 
 export const workFilters: Array<{ label: string; value: WorkFilter }> = [
-  { label: "Development", value: "development" },
-  { label: "UI/UX Design", value: "design" }
+  { label: "Built Projects", value: "development" },
+  { label: "Design Studies", value: "design" }
 ];
 
 export const designPlaceholders = [
