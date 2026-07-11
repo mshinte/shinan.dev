@@ -5,9 +5,9 @@ export default function SectionHero() {
     <section className="relative z-10 pb-20 pt-20 sm:pt-24 lg:pb-24 lg:pt-[120px]">
       <div className="mx-auto grid w-[min(1120px,90vw)] items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:gap-12">
         <div className="grid min-w-0 gap-6">
-          <div className="inline-flex w-fit items-center rounded-full bg-accent px-3.5 py-1.5 text-sm font-semibold">
+          {/* <div className="inline-flex w-fit items-center rounded-full bg-accent px-3.5 py-1.5 text-sm font-semibold">
             Available for collabs
-          </div>
+          </div> */}
           <h1 className="font-display text-[clamp(2.6rem,5vw,4.6rem)] leading-[1.05] tracking-[-0.03em]">
            I like turning ideas into thoughtful websites.
           </h1>

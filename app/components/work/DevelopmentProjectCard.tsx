@@ -60,16 +60,6 @@ export default function DevelopmentProjectCard({
         <span className="font-semibold text-ink">Role</span>
         <span className="text-muted">{project.role}</span>
       </div>
-      <div className="flex flex-wrap gap-2">
-        {project.stack.map((item) => (
-          <span
-            className="rounded-full border-2 border-accent3 bg-white/70 px-3 py-1.5 text-xs font-semibold text-muted"
-            key={item}
-          >
-            {item}
-          </span>
-        ))}
-      </div>
       <div className="flex flex-col gap-1 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
         <span>{project.type}</span>
         <div className="flex flex-wrap gap-4">

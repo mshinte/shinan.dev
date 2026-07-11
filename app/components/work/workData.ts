@@ -18,7 +18,7 @@ export type Project = {
 
 export const projects = [
   {
-    category: "Final Year Project",
+    category: "Final Year Project - 2026",
     title: "Community Centric Events Management System",
     description:
       "A community-centric event management system for local organisers, with event creation, real-time communication, and secure QR ticketing.",
@@ -37,7 +37,7 @@ export const projects = [
     ]
   },
   {
-    category: "Internship - Product",
+    category: "Internship Product - 2025",
     title: "Asset Management System",
     description:
       "A digital asset management system built to streamline asset tracking, maintenance visibility, and department-level coordination.",

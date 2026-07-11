@@ -47,9 +47,20 @@ export default function DesignProjectCard({
 
   return (
     <article
-      className="grid gap-5 overflow-hidden rounded-[18px] border border-black/10 bg-card p-5 opacity-0 translate-y-4 animate-reveal sm:grid-cols-[minmax(0,1.55fr)_minmax(220px,0.45fr)] sm:p-6 [animation-delay:var(--delay,0s)]"
+      className="grid gap-5 overflow-hidden rounded-[18px] border border-black/10 bg-card p-5 opacity-0 translate-y-4 animate-reveal sm:p-6 [animation-delay:var(--delay,0s)]"
       style={{ "--delay": `${index * 0.1}s` } as CSSProperties}
     >
+      <div>
+        <div className="mb-3 flex flex-wrap items-center gap-2">
+          <span className="text-xs uppercase tracking-[0.2em] text-muted">
+            {project.category}
+          </span>
+        </div>
+        <h3 className="font-display text-[1.2rem] sm:text-[1.3rem]">
+          {project.title}
+        </h3>
+        <p className="mt-3 max-w-3xl text-muted">{project.description}</p>
+      </div>
       <div
         className={`relative overflow-hidden rounded-[14px] border border-black/10 bg-base ${
           hasImages
@@ -144,44 +155,6 @@ export default function DesignProjectCard({
         >
           <span aria-hidden="true">›</span>
         </button>
-      </div>
-      <div className="flex flex-col justify-between gap-5">
-        <div>
-          <div className="mb-3 flex flex-wrap items-center gap-2">
-            <span className="text-xs uppercase tracking-[0.2em] text-muted">
-              {project.category}
-            </span>
-          </div>
-          <h3 className="font-display text-[1.2rem] sm:text-[1.3rem]">
-            {project.title}
-          </h3>
-          <p className="mt-3 text-muted">{project.description}</p>
-          {project.scope ? (
-            <div className="mt-5 rounded-[14px] bg-base/70 p-4 text-sm">
-              <span className="block font-semibold text-ink">Design Scope</span>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {project.scope.map((item) => (
-                  <span
-                    className="rounded-full bg-white/70 px-3 py-1.5 text-xs font-semibold text-muted"
-                    key={item}
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ) : null}
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {project.stack.map((item) => (
-            <span
-              className="rounded-full border-2 border-accent3 bg-white/70 px-3 py-1.5 text-xs font-semibold text-muted"
-              key={item}
-            >
-              {item}
-            </span>
-          ))}
-        </div>
       </div>
     </article>
   );
