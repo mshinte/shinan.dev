@@ -156,7 +156,7 @@ export const projects = [
   },
   {
     category: "Project Management - Assignment",
-    title: "CRL+You",
+    title: "CTRL+You",
     description:
       "A project management module concept focused on planning a realistic IT project by combining project phases, tools, techniques, and human factors into a structured delivery approach.",
     role: "Project planning, interface flow, and delivery documentation",

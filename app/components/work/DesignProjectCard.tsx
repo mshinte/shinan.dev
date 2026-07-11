@@ -51,7 +51,7 @@ export default function DesignProjectCard({
       className="grid gap-5 overflow-hidden rounded-[18px] border border-black/10 bg-card p-5 opacity-0 translate-y-4 animate-reveal sm:p-6 [animation-delay:var(--delay,0s)]"
       style={{ "--delay": `${index * 0.1}s` } as CSSProperties}
     >
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+      <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <h3 className="font-display text-[1.2rem] sm:text-[1.3rem]">
             {project.title}
@@ -71,7 +71,7 @@ export default function DesignProjectCard({
             </button>
           </div>
         </div>
-        <div className="flex h-[72px] w-[72px] shrink-0 items-center justify-center overflow-hidden rounded-full border border-black/10 bg-white/70 text-[9px] font-semibold uppercase tracking-[0.12em] text-muted">
+        <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full border border-black/10 bg-white/70 text-[9px] font-semibold uppercase tracking-[0.12em] text-muted sm:h-[72px] sm:w-[72px]">
           {project.logo ? (
             <img
               alt={`${project.title} logo`}
