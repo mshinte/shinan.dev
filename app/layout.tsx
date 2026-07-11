@@ -18,6 +18,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://shinan.dev"),
   title: "Mohamed Shinan",
   description:
     "Portfolio for Shinan: product, design, and code with bold aesthetics and real-world focus."
