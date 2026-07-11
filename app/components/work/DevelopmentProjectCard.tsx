@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import type { CSSProperties } from "react";
 import type { Project } from "./workData";
@@ -52,7 +51,7 @@ export default function DevelopmentProjectCard({
             {project.title}
           </h3>
         </div>
-        <span className="w-fit rounded-full bg-black/5 px-3 py-1 text-sm font-semibold text-ink">
+        <span className="w-fit rounded-full bg-accent3 px-3 py-1 text-sm font-semibold text-ink">
           {project.year}
         </span>
       </div>
@@ -64,7 +63,7 @@ export default function DevelopmentProjectCard({
       <div className="flex flex-wrap gap-2">
         {project.stack.map((item) => (
           <span
-            className="rounded-full border border-black/10 bg-white/70 px-3 py-1.5 text-xs font-semibold text-muted"
+            className="rounded-full border-2 border-accent3 bg-white/70 px-3 py-1.5 text-xs font-semibold text-muted"
             key={item}
           >
             {item}
@@ -77,16 +76,13 @@ export default function DevelopmentProjectCard({
           {hasImages ? (
             <button
               aria-expanded={isInterfaceOpen}
-              className="font-semibold text-ink hover:text-accent3"
+              className="font-semibold text-accent3 hover:text-ink"
               onClick={() => setIsInterfaceOpen((current) => !current)}
               type="button"
             >
               {isInterfaceOpen ? "Hide interface" : "View interface"}
             </button>
           ) : null}
-          <Link className="font-semibold text-ink hover:text-accent3" href="/contact">
-            Ask about this project
-          </Link>
         </div>
       </div>
       {hasImages && currentImage && isInterfaceOpen ? (

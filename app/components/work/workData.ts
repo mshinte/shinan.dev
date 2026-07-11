@@ -22,10 +22,10 @@ export const projects = [
     title: "Community Centric Events Management System",
     description:
       "A community-centric event management system for local organisers, with event creation, real-time communication, and secure QR ticketing.",
-    role: "Product design, frontend, backend,system flow and  documentation",
+    role: "Product design, frontend, backend, system flow and  documentation",
     stack: ["PWA", "QR ticketing", "Realtime UX"],
     type: "Progressive Web App",
-    year: "2025",
+    year: "2026",
     discipline: "development",
     imageLayout: "wide",
     imageAspect: "ccems",

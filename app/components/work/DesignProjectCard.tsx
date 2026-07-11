@@ -175,7 +175,7 @@ export default function DesignProjectCard({
         <div className="flex flex-wrap gap-2">
           {project.stack.map((item) => (
             <span
-              className="rounded-full border border-black/10 bg-white/70 px-3 py-1.5 text-xs font-semibold text-muted"
+              className="rounded-full border-2 border-accent3 bg-white/70 px-3 py-1.5 text-xs font-semibold text-muted"
               key={item}
             >
               {item}
