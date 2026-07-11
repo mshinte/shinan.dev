@@ -89,7 +89,7 @@ export default function DesignProjectCard({
             hasImages
               ? isMobileImage
                 ? "min-h-[640px]"
-                : "aspect-[1440/1024]"
+                : "mx-auto aspect-[1440/1024] w-full sm:w-[76%]"
               : "min-h-[300px]"
           }`}
         >
