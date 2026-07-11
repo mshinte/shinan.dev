@@ -37,7 +37,7 @@ export const projects = [
     ]
   },
   {
-    category: "Internship Product - 2025",
+    category: "Internship - 2025",
     title: "Asset Management System",
     description:
       "A digital asset management system built to streamline asset tracking, maintenance visibility, and department-level coordination.",
