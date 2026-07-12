@@ -175,7 +175,7 @@ export const projects = [
     images: [
       "/projects/crl+you/Login.jpg",
       "/projects/crl+you/Register.jpg",
-      "/projects/crl+you/Join Us.jpg",
+      "/projects/crl+you/JoinUs.jpg",
       "/projects/crl+you/Dashboard.jpg"
     ]
   }
